@@ -1,0 +1,110 @@
+{% comment %} 404 page - clean minimal design {% endcomment %}
+
+<section class="main-404" id="section-{{ section.id }}">
+  <div class="error-404__wrapper">
+    <span class="error-404__code">404</span>
+    <h1 class="error-404__heading">{{ section.settings.heading }}</h1>
+    <p class="error-404__message">{{ section.settings.message }}</p>
+    <a href="{{ routes.all_products_collection_url }}" class="error-404__btn">
+      {{ section.settings.button_text }}
+    </a>
+  </div>
+</section>
+
+<style>
+  #section-{{ section.id }} {
+    background-color: #FAF8F5;
+    padding: 100px 20px;
+    font-family: 'Inter', sans-serif;
+  }
+
+  #section-{{ section.id }} .error-404__wrapper {
+    max-width: 520px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  #section-{{ section.id }} .error-404__code {
+    font-family: 'Playfair Display', serif;
+    font-size: 96px;
+    font-weight: 700;
+    color: #C5A46D;
+    display: block;
+    line-height: 1;
+    margin-bottom: 16px;
+    opacity: 0.6;
+  }
+
+  #section-{{ section.id }} .error-404__heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: #2D4F3E;
+    margin: 0 0 12px;
+  }
+
+  #section-{{ section.id }} .error-404__message {
+    font-size: 16px;
+    color: #888;
+    margin: 0 0 32px;
+    line-height: 1.6;
+  }
+
+  #section-{{ section.id }} .error-404__btn {
+    display: inline-block;
+    background-color: #2D4F3E;
+    color: #FAF8F5;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    padding: 14px 36px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+
+  #section-{{ section.id }} .error-404__btn:hover {
+    background-color: #234232;
+  }
+
+  @media screen and (max-width: 749px) {
+    #section-{{ section.id }} {
+      padding: 60px 16px;
+    }
+
+    #section-{{ section.id }} .error-404__code {
+      font-size: 64px;
+    }
+
+    #section-{{ section.id }} .error-404__heading {
+      font-size: 24px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "404 Page",
+  "tag": "section",
+  "class": "main-404-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Page Not Found"
+    },
+    {
+      "type": "textarea",
+      "id": "message",
+      "label": "Message",
+      "default": "Sorry, the page you are looking for does not exist. It might have been moved or removed."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Continue Shopping"
+    }
+  ]
+}
+{% endschema %}

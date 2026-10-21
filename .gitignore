@@ -1,0 +1,30 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Environment variables, credentials, and secrets
+.env
+.env.*
+*.env
+*.pem
+*.key
+*.cert
+*.token
+*.credentials
+secrets/
+
+# Shopify CLI & Local Cache
+.shopify/
+.theme-check.cache/
+
+# Hosting CLI metadata
+.netlify/
+.vercel/
+
+# Dependencies & logs
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log

@@ -1,0 +1,235 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "TimeCraft",
+    "theme_version": "1.0.0",
+    "theme_author": "TimeCraft Watches",
+    "theme_documentation_url": "",
+    "theme_support_url": ""
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Brand Colors"
+      },
+      {
+        "type": "color",
+        "id": "color_background",
+        "label": "Background color",
+        "default": "#FAF8F5",
+        "info": "Warm off-white background - poori site ka base color"
+      },
+      {
+        "type": "color",
+        "id": "color_primary",
+        "label": "Primary color (Forest Green)",
+        "default": "#2D4F3E",
+        "info": "Sections aur buttons ke liye dark green"
+      },
+      {
+        "type": "color",
+        "id": "color_accent",
+        "label": "Accent color (Gold)",
+        "default": "#C5A46D",
+        "info": "Highlights aur decorative elements ke liye muted gold"
+      },
+      {
+        "type": "color",
+        "id": "color_text",
+        "label": "Text color",
+        "default": "#1A1A1A"
+      },
+      {
+        "type": "color",
+        "id": "color_text_light",
+        "label": "Secondary text color",
+        "default": "#6B6B6B"
+      },
+      {
+        "type": "color",
+        "id": "color_border",
+        "label": "Border color",
+        "default": "#E0DCD7"
+      },
+      {
+        "type": "color",
+        "id": "color_button_text",
+        "label": "Button text color",
+        "default": "#FFFFFF"
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Font Settings"
+      },
+      {
+        "type": "select",
+        "id": "heading_font_weight",
+        "label": "Heading font weight",
+        "options": [
+          { "value": "400", "label": "Regular" },
+          { "value": "700", "label": "Bold" }
+        ],
+        "default": "700"
+      },
+      {
+        "type": "range",
+        "id": "body_font_size",
+        "label": "Base font size",
+        "min": 14,
+        "max": 20,
+        "step": 1,
+        "unit": "px",
+        "default": 16
+      }
+    ]
+  },
+  {
+    "name": "Social Media",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Social media links"
+      },
+      {
+        "type": "text",
+        "id": "social_facebook",
+        "label": "Facebook URL",
+        "info": "Apni Facebook page ka link yahan daalein"
+      },
+      {
+        "type": "text",
+        "id": "social_instagram",
+        "label": "Instagram URL"
+      },
+      {
+        "type": "text",
+        "id": "social_tiktok",
+        "label": "TikTok URL"
+      },
+      {
+        "type": "text",
+        "id": "social_whatsapp",
+        "label": "WhatsApp number",
+        "info": "Country code ke saath likho - jaise +923001234567"
+      },
+      {
+        "type": "text",
+        "id": "social_youtube",
+        "label": "YouTube URL"
+      }
+    ]
+  },
+  {
+    "name": "Store Information",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Contact & Location"
+      },
+      {
+        "type": "text",
+        "id": "store_phone",
+        "label": "Phone number",
+        "default": "+92 300 1234567"
+      },
+      {
+        "type": "text",
+        "id": "store_phone_secondary",
+        "label": "Secondary phone number"
+      },
+      {
+        "type": "textarea",
+        "id": "store_address",
+        "label": "Store address",
+        "default": "Raja Bazaar, Rawalpindi, Pakistan"
+      },
+      {
+        "type": "text",
+        "id": "store_email",
+        "label": "Email address"
+      },
+      {
+        "type": "header",
+        "content": "Business Hours"
+      },
+      {
+        "type": "text",
+        "id": "store_hours_weekday",
+        "label": "Weekday hours",
+        "default": "Mon - Sat: 11:00 AM - 9:00 PM"
+      },
+      {
+        "type": "text",
+        "id": "store_hours_weekend",
+        "label": "Weekend / Holiday hours",
+        "default": "Sunday: 2:00 PM - 9:00 PM"
+      },
+      {
+        "type": "header",
+        "content": "Delivery"
+      },
+      {
+        "type": "text",
+        "id": "delivery_charges_local",
+        "label": "Local delivery charges text",
+        "default": "Rawalpindi / Islamabad: Rs. 200"
+      },
+      {
+        "type": "text",
+        "id": "delivery_charges_nationwide",
+        "label": "Nationwide delivery charges text",
+        "default": "All over Pakistan: Rs. 300"
+      },
+      {
+        "type": "text",
+        "id": "delivery_time",
+        "label": "Estimated delivery time",
+        "default": "2-4 business days nationwide"
+      }
+    ]
+  },
+  {
+    "name": "Payment Information",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Payment Methods Info"
+      },
+      {
+        "type": "paragraph",
+        "content": "Yeh sirf information text hai jo customers ko dikhaya jaata hai. Yeh actual payment gateways nahi hain - payment gateway Shopify admin se configure karo."
+      },
+      {
+        "type": "text",
+        "id": "payment_cod_label",
+        "label": "Cash on Delivery label",
+        "default": "Cash on Delivery (COD) available"
+      },
+      {
+        "type": "text",
+        "id": "payment_jazzcash_label",
+        "label": "JazzCash info text",
+        "default": "JazzCash accepted - number will be shared after order"
+      },
+      {
+        "type": "text",
+        "id": "payment_easypaisa_label",
+        "label": "Easypaisa info text",
+        "default": "Easypaisa accepted - number will be shared after order"
+      },
+      {
+        "type": "text",
+        "id": "payment_bank_label",
+        "label": "Bank transfer info text",
+        "default": "Bank transfer available on request"
+      }
+    ]
+  }
+]

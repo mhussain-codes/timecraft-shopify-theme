@@ -1,0 +1,16 @@
+{
+  "sections": {
+    "main-cart": {
+      "type": "main-cart",
+      "settings": {
+        "page_title": "Your Cart",
+        "delivery_note": "Free delivery in Rawalpindi & Islamabad on orders above Rs. 5,000. Cash on Delivery available across Pakistan.",
+        "checkout_text": "Proceed to Checkout",
+        "empty_message": "Your cart is currently empty."
+      }
+    }
+  },
+  "order": [
+    "main-cart"
+  ]
+}

@@ -1,0 +1,116 @@
+{% comment %} Generic page content section - page title aur content dikhata hai {% endcomment %}
+
+<section class="main-page" id="section-{{ section.id }}">
+  <div class="page__wrapper">
+    <h1 class="page__title">{{ page.title }}</h1>
+    <div class="page__content rte">
+      {{ page.content }}
+    </div>
+  </div>
+</section>
+
+<style>
+  #section-{{ section.id }} {
+    background-color: #FAF8F5;
+    padding: 60px 20px;
+    font-family: 'Inter', sans-serif;
+  }
+
+  #section-{{ section.id }} .page__wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  #section-{{ section.id }} .page__title {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: #2D4F3E;
+    margin: 0 0 28px;
+    text-align: center;
+  }
+
+  /* RTE content styling - Shopify rich text editor ka content */
+  #section-{{ section.id }} .page__content {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #444;
+  }
+
+  #section-{{ section.id }} .page__content h2,
+  #section-{{ section.id }} .page__content h3,
+  #section-{{ section.id }} .page__content h4 {
+    font-family: 'Playfair Display', serif;
+    color: #2D4F3E;
+    margin: 28px 0 12px;
+  }
+
+  #section-{{ section.id }} .page__content h2 {
+    font-size: 26px;
+  }
+
+  #section-{{ section.id }} .page__content h3 {
+    font-size: 22px;
+  }
+
+  #section-{{ section.id }} .page__content p {
+    margin: 0 0 16px;
+  }
+
+  #section-{{ section.id }} .page__content a {
+    color: #2D4F3E;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+  }
+
+  #section-{{ section.id }} .page__content a:hover {
+    color: #C5A46D;
+  }
+
+  #section-{{ section.id }} .page__content ul,
+  #section-{{ section.id }} .page__content ol {
+    padding-left: 24px;
+    margin: 0 0 16px;
+  }
+
+  #section-{{ section.id }} .page__content li {
+    margin-bottom: 8px;
+  }
+
+  #section-{{ section.id }} .page__content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin: 16px 0;
+  }
+
+  #section-{{ section.id }} .page__content blockquote {
+    border-left: 3px solid #C5A46D;
+    padding-left: 20px;
+    margin: 20px 0;
+    color: #666;
+    font-style: italic;
+  }
+
+  @media screen and (max-width: 749px) {
+    #section-{{ section.id }} .page__title {
+      font-size: 28px;
+    }
+
+    #section-{{ section.id }} {
+      padding: 40px 16px;
+    }
+
+    #section-{{ section.id }} .page__content {
+      font-size: 15px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Page Content",
+  "tag": "section",
+  "class": "main-page-section",
+  "settings": []
+}
+{% endschema %}

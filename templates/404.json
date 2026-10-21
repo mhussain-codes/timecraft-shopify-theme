@@ -1,0 +1,15 @@
+{
+  "sections": {
+    "main-404": {
+      "type": "main-404",
+      "settings": {
+        "heading": "Page Not Found",
+        "message": "Sorry, the page you were looking for doesn't exist. It may have been moved or the link is incorrect.",
+        "button_text": "Continue Shopping"
+      }
+    }
+  },
+  "order": [
+    "main-404"
+  ]
+}

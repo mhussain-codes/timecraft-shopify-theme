@@ -1,0 +1,54 @@
+{% comment %}
+  TIMECRAFT — Live Watch Hands Overlay for Product Photos
+  Places rotating analog hands over a watch photo's dial in Rawalpindi Asia/Karachi time.
+  Supports configurable metafields with sensible defaults.
+  Digital watches are automatically skipped.
+  Yahan watch photo par live hands ka overlay render hota hai.
+{% endcomment %}
+
+{%- liquid
+  assign is_digital = false
+  if product.tags contains 'digital' or product.tags contains 'smartwatch' or product.tags contains 'watch-type:digital' or product.type == 'Digital'
+    assign is_digital = true
+  endif
+  if product.metafields.custom.is_digital.value == true or product.metafields.custom.watch_type.value == 'digital'
+    assign is_digital = true
+  endif
+
+  assign dial_x = product.metafields.custom.dial_center_x.value | default: product.metafields.custom.dial_center_x | default: 50
+  assign dial_y = product.metafields.custom.dial_center_y.value | default: product.metafields.custom.dial_center_y | default: 50
+  assign dial_size = product.metafields.custom.dial_size.value | default: product.metafields.custom.dial_size | default: 50
+  assign hand_color = product.metafields.custom.hand_color.value | default: product.metafields.custom.hand_color | default: '#2D4F3E'
+  assign second_color = product.metafields.custom.second_color.value | default: product.metafields.custom.second_color | default: '#C5A46D'
+-%}
+
+{%- unless is_digital -%}
+  <div
+    class="watch-photo-clock-overlay"
+    style="left: {{ dial_x }}%; top: {{ dial_y }}%; width: {{ dial_size }}%; height: {{ dial_size }}%;"
+    aria-hidden="true"
+    data-watch-overlay
+  >
+    <svg
+      class="watch-photo-clock-svg"
+      viewBox="0 0 100 100"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      data-live-clock="svg"
+      data-clock-pivot="50 50"
+    >
+      <!-- Hour Hand (Length: 26 units) -->
+      <line class="clock-hand clock-hand--hour" x1="50" y1="50" x2="50" y2="24" stroke="{{ hand_color }}" stroke-width="3.2" stroke-linecap="round" transform="rotate(0 50 50)"/>
+      
+      <!-- Minute Hand (Length: 37 units) -->
+      <line class="clock-hand clock-hand--minute" x1="50" y1="50" x2="50" y2="13" stroke="{{ hand_color }}" stroke-width="2.2" stroke-linecap="round" transform="rotate(0 50 50)"/>
+      
+      <!-- Second Hand (with counterweight tail) -->
+      <line class="clock-hand clock-hand--second" x1="50" y1="59" x2="50" y2="9" stroke="{{ second_color }}" stroke-width="1.2" stroke-linecap="round" transform="rotate(0 50 50)"/>
+      
+      <!-- Center Pinion Cap -->
+      <circle cx="50" cy="50" r="3.2" fill="{{ second_color }}"/>
+      <circle cx="50" cy="50" r="1.4" fill="{{ hand_color }}"/>
+    </svg>
+  </div>
+{%- endunless -%}

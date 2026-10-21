@@ -1,0 +1,447 @@
+{% comment %}
+  TIMECRAFT — Hero Banner Section
+  Full width with editorial copy, trust guarantees, and interactive horological artwork.
+  Yahan hero section ka copy aur artwork render hota hai.
+{% endcomment %}
+
+{%- liquid
+  assign heading = section.settings.heading | default: 'Timeless Elegance, Crafted for You'
+  assign subheading = section.settings.subheading | default: 'Premium watches sourced and curated from the heart of Raja Bazaar, Rawalpindi. Horological craftsmanship you can trust, delivered with Cash on Delivery across Pakistan.'
+  assign btn_text = section.settings.button_text | default: section.settings.button_label | default: 'Shop Collection'
+  assign btn_link = section.settings.button_link | default: '/collections/all'
+  assign secondary_btn_text = section.settings.secondary_button_text | default: 'Wholesale Catalog'
+  assign secondary_btn_link = section.settings.secondary_button_link | default: '#wholesale'
+  assign hero_image = section.settings.image
+-%}
+
+<section class="hero-section" id="hero-{{ section.id }}" aria-label="Hero Showcase">
+  <div class="hero-inner">
+
+    <!-- Text Content Column -->
+    <div class="hero-text">
+      
+      <!-- Eyebrow Badge -->
+      <div class="hero-eyebrow">
+        <span class="hero-eyebrow__dot"></span>
+        <span>Raja Bazaar, Rawalpindi &bull; Authorized Watch Retailer</span>
+      </div>
+
+      <h1 class="hero-heading">{{ heading }}</h1>
+      <p class="hero-subheading">{{ subheading }}</p>
+
+      <!-- Action Buttons -->
+      <div class="hero-actions">
+        {%- if btn_text != blank -%}
+          <a href="{{ btn_link }}" class="hero-btn hero-btn--primary">
+            <span>{{ btn_text }}</span>
+            <span class="hero-btn__arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        {%- endif -%}
+
+        {%- if secondary_btn_text != blank -%}
+          <a href="{{ secondary_btn_link }}" class="hero-btn hero-btn--secondary">
+            <span>{{ secondary_btn_text }}</span>
+          </a>
+        {%- endif -%}
+      </div>
+
+      <!-- Trust Badges Line -->
+      <div class="hero-trust-bar">
+        <div class="hero-trust-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Open-Box COD</span>
+        </div>
+        <span class="hero-trust-divider">&bull;</span>
+        <div class="hero-trust-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>1-Year Bench Warranty</span>
+        </div>
+        <span class="hero-trust-divider">&bull;</span>
+        <div class="hero-trust-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>2-4 Days TCS Dispatch</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Media / Vector Horological Artwork Column -->
+    <div class="hero-media">
+      {%- if hero_image != blank -%}
+        <div class="hero-watch-placeholder watch-photo-container">
+          {{ hero_image | image_url: width: 800 | image_tag: loading: 'eager', alt: heading, class: 'hero-media__img' }}
+          {% render 'watch-clock-overlay' %}
+        </div>
+      {%- else -%}
+        <!-- Classic Analog Horology Vector Illustration (Rawalpindi Live Time) -->
+        <div class="hero-watch-placeholder">
+          <svg viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg" class="hero-watch-svg" aria-label="TIMECRAFT Heritage Watch Illustration" data-live-clock="svg" data-clock-pivot="160 160">
+            
+            <!-- Ambient Golden Glow -->
+            <circle cx="160" cy="160" r="130" fill="url(#hero-radial)" opacity="0.18"/>
+
+            <!-- Top Havana Leather Strap with Stitching -->
+            <path d="M125 10 L195 10 L188 75 L132 75 Z" fill="#58311B" stroke="#3D2010" stroke-width="2"/>
+            <line x1="134" y1="18" x2="134" y2="70" stroke="#874B26" stroke-width="1.5" stroke-dasharray="3 3"/>
+            <line x1="186" y1="18" x2="186" y2="70" stroke="#874B26" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+            <!-- Bottom Havana Leather Strap -->
+            <path d="M132 245 L188 245 L195 310 L125 310 Z" fill="#58311B" stroke="#3D2010" stroke-width="2"/>
+            <line x1="134" y1="250" x2="134" y2="302" stroke="#874B26" stroke-width="1.5" stroke-dasharray="3 3"/>
+            <line x1="186" y1="250" x2="186" y2="302" stroke="#874B26" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+            <!-- 18K Yellow Gold Watch Case Outer Bezel -->
+            <circle cx="160" cy="160" r="105" fill="#1C382B" stroke="#C5A46D" stroke-width="6"/>
+            <circle cx="160" cy="160" r="96" fill="#152C22" stroke="#9A7B45" stroke-width="1.5"/>
+
+            <!-- Warm Off-White / Parchment Sunburst Dial -->
+            <circle cx="160" cy="160" r="88" fill="#FAF8F5" stroke="#C5A46D" stroke-width="1"/>
+
+            <!-- Railway Minute Track (60 ticks) -->
+            {% for i in (1..60) %}
+              <line
+                x1="160" y1="76"
+                x2="160" y2="{% if i == 5 or i == 10 or i == 15 or i == 20 or i == 25 or i == 30 or i == 35 or i == 40 or i == 45 or i == 50 or i == 55 or i == 60 %}82{% else %}79{% endif %}"
+                stroke="{% if i == 5 or i == 10 or i == 15 or i == 20 or i == 25 or i == 30 or i == 35 or i == 40 or i == 45 or i == 50 or i == 55 or i == 60 %}#2D4F3E{% else %}#C5A46D{% endif %}"
+                stroke-width="{% if i == 5 or i == 10 or i == 15 or i == 20 or i == 25 or i == 30 or i == 35 or i == 40 or i == 45 or i == 50 or i == 55 or i == 60 %}1.8{% else %}0.8{% endif %}"
+                stroke-linecap="round"
+                transform="rotate({{ i | times: 6 }} 160 160)"
+              />
+            {% endfor %}
+
+            <!-- Roman Numerals for 12, 3, 6, 9 -->
+            <text x="160" y="102" text-anchor="middle" fill="#2D4F3E" font-family="'Playfair Display', serif" font-size="16" font-weight="700">XII</text>
+            <text x="226" y="166" text-anchor="middle" fill="#2D4F3E" font-family="'Playfair Display', serif" font-size="16" font-weight="700">III</text>
+            <text x="160" y="230" text-anchor="middle" fill="#2D4F3E" font-family="'Playfair Display', serif" font-size="16" font-weight="700">VI</text>
+            <text x="94" y="166" text-anchor="middle" fill="#2D4F3E" font-family="'Playfair Display', serif" font-size="16" font-weight="700">IX</text>
+
+            <!-- Brand Signet on Dial -->
+            <text x="160" y="128" text-anchor="middle" fill="#2D4F3E" font-family="'Playfair Display', serif" font-size="11" font-weight="700" letter-spacing="2">TIMECRAFT</text>
+            <text x="160" y="139" text-anchor="middle" fill="#C5A46D" font-family="'Inter', sans-serif" font-size="5.5" font-weight="600" letter-spacing="1.2">CHRONOMETER • 100M</text>
+
+            <!-- Small Seconds Sub-dial at 6 o'clock -->
+            <circle cx="160" cy="192" r="14" fill="#F4EFE6" stroke="#C5A46D" stroke-width="0.8"/>
+            <line x1="160" y1="180" x2="160" y2="183" stroke="#2D4F3E" stroke-width="1"/>
+            <line x1="160" y1="201" x2="160" y2="204" stroke="#2D4F3E" stroke-width="1"/>
+            <line x1="148" y1="192" x2="151" y2="192" stroke="#2D4F3E" stroke-width="1"/>
+            <line x1="169" y1="192" x2="172" y2="192" stroke="#2D4F3E" stroke-width="1"/>
+            <line x1="160" y1="192" x2="166" y2="186" stroke="#C5A46D" stroke-width="1" stroke-linecap="round"/>
+
+            <!-- Live Rotating Hands (Rawalpindi Asia/Karachi Time) -->
+            <line class="clock-hand clock-hand--hour" x1="160" y1="160" x2="160" y2="106" stroke="#2D4F3E" stroke-width="4.5" stroke-linecap="round" transform="rotate(0 160 160)"/>
+            <line class="clock-hand clock-hand--minute" x1="160" y1="160" x2="160" y2="82" stroke="#2D4F3E" stroke-width="3" stroke-linecap="round" transform="rotate(0 160 160)"/>
+            <line class="clock-hand clock-hand--second" x1="160" y1="184" x2="160" y2="70" stroke="#C5A46D" stroke-width="1.5" stroke-linecap="round" transform="rotate(0 160 160)"/>
+
+            <!-- Center Jewel Pin -->
+            <circle cx="160" cy="160" r="5" fill="#C5A46D"/>
+            <circle cx="160" cy="160" r="2.5" fill="#2D4F3E"/>
+
+            <!-- Fluted Winding Crown at 3 o'clock -->
+            <rect x="265" y="152" width="12" height="16" rx="2" fill="#C5A46D" stroke="#9A7B45" stroke-width="1.5"/>
+            <line x1="268" y1="154" x2="268" y2="166" stroke="#9A7B45" stroke-width="1"/>
+            <line x1="272" y1="154" x2="272" y2="166" stroke="#9A7B45" stroke-width="1"/>
+
+            <defs>
+              <radialGradient id="hero-radial" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#C5A46D"/>
+                <stop offset="100%" stop-color="#2D4F3E" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+          </svg>
+        </div>
+      {%- endif -%}
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* ---------- Hero Section Styles ---------- */
+  .hero-section {
+    background-color: {{ section.settings.bg_color | default: '#2D4F3E' }};
+    color: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(197, 164, 109, 0.25);
+  }
+
+  /* Subtle background radial depth */
+  .hero-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -150px;
+    transform: translateY(-50%);
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(197, 164, 109, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 88px 24px;
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-text {
+    flex: 1.15;
+    min-width: 0;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(197, 164, 109, 0.35);
+    color: #C5A46D;
+    font-family: 'Inter', sans-serif;
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 22px;
+  }
+
+  .hero-eyebrow__dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #C5A46D;
+    box-shadow: 0 0 8px #C5A46D;
+  }
+
+  .hero-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 54px;
+    font-weight: 700;
+    line-height: 1.15;
+    margin: 0 0 20px;
+    color: #FFFFFF;
+    letter-spacing: -0.5px;
+  }
+
+  .hero-subheading {
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: rgba(250, 248, 245, 0.85);
+    margin: 0 0 36px;
+    max-width: 520px;
+  }
+
+  .hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 38px;
+    flex-wrap: wrap;
+  }
+
+  .hero-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 16px 36px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+  }
+
+  .hero-btn--primary {
+    background-color: #C5A46D;
+    color: #2D4F3E;
+    box-shadow: 0 6px 20px rgba(197, 164, 109, 0.25);
+  }
+
+  .hero-btn--primary:hover {
+    background-color: #D4AF37;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(197, 164, 109, 0.35);
+  }
+
+  .hero-btn__arrow {
+    transition: transform 0.25s ease;
+  }
+
+  .hero-btn--primary:hover .hero-btn__arrow {
+    transform: translateX(4px);
+  }
+
+  .hero-btn--secondary {
+    background: transparent;
+    border: 1.5px solid rgba(255, 255, 255, 0.35);
+    color: #FAF8F5;
+  }
+
+  .hero-btn--secondary:hover {
+    border-color: #C5A46D;
+    color: #C5A46D;
+    background: rgba(197, 164, 109, 0.08);
+  }
+
+  /* Trust Bar */
+  .hero-trust-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: rgba(250, 248, 245, 0.75);
+    flex-wrap: wrap;
+  }
+
+  .hero-trust-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: rgba(250, 248, 245, 0.85);
+  }
+
+  .hero-trust-item svg {
+    color: #C5A46D;
+  }
+
+  .hero-trust-divider {
+    color: rgba(197, 164, 109, 0.5);
+  }
+
+  /* Media Side */
+  .hero-media {
+    flex: 0.95;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+  }
+
+  .hero-watch-placeholder {
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-watch-svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 16px 36px rgba(0, 0, 0, 0.35));
+  }
+
+  /* Hero live watch hands pivot */
+  .hero-watch-svg .clock-hand {
+    transform-origin: 160px 160px;
+  }
+
+  /* Respect reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .hero-btn, .hero-btn__arrow {
+      transition: none;
+    }
+  }
+
+  /* Responsive: Tablet */
+  @media (max-width: 991px) {
+    .hero-inner {
+      flex-direction: column-reverse;
+      padding: 60px 20px;
+      gap: 48px;
+      text-align: center;
+    }
+    .hero-eyebrow { margin-left: auto; margin-right: auto; }
+    .hero-heading { font-size: 40px; }
+    .hero-subheading { margin-left: auto; margin-right: auto; font-size: 16px; }
+    .hero-actions { justify-content: center; }
+    .hero-trust-bar { justify-content: center; }
+    .hero-watch-placeholder { max-width: 320px; }
+  }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .hero-inner { padding: 44px 16px; gap: 36px; }
+    .hero-heading { font-size: 32px; }
+    .hero-subheading { font-size: 14.5px; margin-bottom: 28px; }
+    .hero-actions { flex-direction: column; width: 100%; gap: 12px; }
+    .hero-btn { width: 100%; padding: 14px 20px; }
+    .hero-watch-placeholder { max-width: 250px; }
+    .hero-trust-bar { font-size: 11px; gap: 8px; }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Hero Banner",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Timeless Elegance, Crafted for You"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Explore our curated collection of premium watches, sourced from the heart of Raja Bazaar. Craftsmanship you can trust, style you can wear every day."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Primary Button Text",
+      "default": "Shop Collection"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Primary Button Link",
+      "default": "/collections/all"
+    },
+    {
+      "type": "text",
+      "id": "secondary_button_text",
+      "label": "Secondary Button Text",
+      "default": "Wholesale Catalog"
+    },
+    {
+      "type": "url",
+      "id": "secondary_button_link",
+      "label": "Secondary Button Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Hero Image"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#2D4F3E"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero Banner"
+    }
+  ]
+}
+{% endschema %}

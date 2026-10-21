@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <script>document.documentElement.classList.replace('no-js', 'js');</script>
+  <title>TIMECRAFT Watches — Raja Bazaar Rawalpindi Retailer & Wholesale</title>
+  <meta name="description" content="Discover premium classic and automatic timepieces from Raja Bazaar, Rawalpindi. 100% authentic watches with 1-year workshop warranty and Cash on Delivery across Pakistan.">
+
+  <!-- Google Fonts: Playfair Display + Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Theme Stylesheet -->
+  <link rel="stylesheet" href="assets/theme.css">
+
+  <style>
+    /* In-page styling polish for maximum customer confidence and zero clipping */
+    :root {
+      --color-bg: #FAF8F5;
+      --color-primary: #2D4F3E;
+      --color-primary-dark: #1E3A2B;
+      --color-accent: #C5A46D;
+      --color-accent-light: #E0C99E;
+      --color-text: #2C2C2C;
+      --color-text-light: #6B6B6B;
+      --color-white: #FFFFFF;
+      --color-border: #E8E4DF;
+    }
+
+    body {
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    /* Interactive Cart Toast Notification */
+    .cart-toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #FFFFFF;
+      border: 1px solid var(--color-border);
+      border-left: 4px solid var(--color-accent);
+      border-radius: 8px;
+      padding: 16px 20px;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15);
+      z-index: 3000;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      transform: translateY(120%);
+      opacity: 0;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      max-width: 380px;
+    }
+    .cart-toast.is-active {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    .cart-toast__icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(45, 79, 62, 0.1);
+      color: var(--color-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .cart-toast__content {
+      flex: 1;
+    }
+    .cart-toast__title {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin: 0 0 2px;
+    }
+    .cart-toast__desc {
+      font-size: 12px;
+      color: var(--color-text-light);
+      margin: 0;
+    }
+    .cart-toast__btn {
+      background: var(--color-primary);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 8px 12px;
+      border-radius: 4px;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    /* Showroom highlight banner */
+    .showroom-strip {
+      background: #F2EFEB;
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+      padding: 24px;
+      font-size: 13.5px;
+      color: var(--color-text);
+    }
+    .showroom-strip__inner {
+      max-width: 1320px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .showroom-strip__col {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .showroom-strip__icon {
+      color: var(--color-accent);
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Announcement Bar Section -->
+  <div class="announcement-bar" role="region" aria-label="Announcement" style="background-color: #2D4F3E; color: #FAF8F5;">
+    <div class="container announcement-bar__container" style="display: flex; justify-content: center; align-items: center; position: relative;">
+      <p class="announcement-bar__text" style="margin: 0; font-size: 13px; font-weight: 500;">
+        ✦ Free delivery in Rawalpindi & Islamabad on orders above Rs. 5,000 | Cash on Delivery Available Across Pakistan ✦
+      </p>
+    </div>
+  </div>
+
+  <!-- Header Section -->
+  <header class="header-section" style="position: sticky; top: 0; z-index: 1000; background: #FFFFFF; border-bottom: 1px solid #E8E4DF;">
+    <div class="header-inner" style="max-width: 1320px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 72px;">
+      
+      <!-- Hamburger Menu for mobile -->
+      <button class="header-hamburger" aria-label="Open menu" onclick="document.getElementById('mobile-nav-drawer').classList.add('active'); document.getElementById('mobile-nav-overlay').classList.add('active');" style="background: none; border: none; cursor: pointer; color: #2D4F3E; display: none;">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="width: 26px; height: 26px;">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+
+      <!-- Logo with watch icon (Rawalpindi live analog clock) -->
+      <div class="header-logo">
+        <a href="#" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #2D4F3E;">
+          <svg class="header-clock-emblem" data-header-clock data-live-clock="svg" data-clock-pivot="16 16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" style="width: 30px; height: 30px;" aria-label="Rawalpindi Live Clock" role="img">
+            <circle cx="16" cy="16" r="14" stroke="#2D4F3E" stroke-width="2"/>
+            <circle cx="16" cy="16" r="11.5" stroke="#C5A46D" stroke-width="1.2"/>
+            <path d="M30 14.8v2.4h1a0.4 0.4 0 0 0 0.4-0.4v-1.6a0.4 0.4 0 0 0-0.4-0.4h-1z" fill="#2D4F3E"/>
+            <!-- Cardinal ticks -->
+            <line x1="16" y1="5.6" x2="16" y2="7.4" stroke="#2D4F3E" stroke-width="1.2" stroke-linecap="round"/>
+            <line x1="24.6" y1="16" x2="26.4" y2="16" stroke="#2D4F3E" stroke-width="1.2" stroke-linecap="round"/>
+            <line x1="16" y1="24.6" x2="16" y2="26.4" stroke="#2D4F3E" stroke-width="1.2" stroke-linecap="round"/>
+            <line x1="5.6" y1="16" x2="7.4" y2="16" stroke="#2D4F3E" stroke-width="1.2" stroke-linecap="round"/>
+            <!-- Moving Hands: 12 o'clock default, updated dynamically to Asia/Karachi time -->
+            <line class="clock-hand clock-hand--hour" x1="16" y1="16" x2="16" y2="9.5" stroke="#2D4F3E" stroke-width="2.2" stroke-linecap="round" transform="rotate(0 16 16)"/>
+            <line class="clock-hand clock-hand--minute" x1="16" y1="16" x2="16" y2="6.8" stroke="#2D4F3E" stroke-width="1.6" stroke-linecap="round" transform="rotate(0 16 16)"/>
+            <line class="clock-hand clock-hand--second" x1="16" y1="18.5" x2="16" y2="5.5" stroke="#C5A46D" stroke-width="0.9" stroke-linecap="round" transform="rotate(0 16 16)"/>
+            <circle cx="16" cy="16" r="1.6" fill="#C5A46D"/>
+            <circle cx="16" cy="16" r="0.75" fill="#2D4F3E"/>
+          </svg>
+          <span style="font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; letter-spacing: 2px;">TIMECRAFT</span>
+        </a>
+      </div>
+
+      <!-- Desktop Nav Links -->
+      <nav>
+        <ul class="header-nav" style="display: flex; gap: 32px; list-style: none; margin: 0; padding: 0;">
+          <li><a href="#" style="text-decoration: none; color: #2D4F3E; font-weight: 600; font-size: 13.5px; text-transform: uppercase; letter-spacing: 0.8px;">Home</a></li>
+          <li><a href="#categories" style="text-decoration: none; color: #2D4F3E; font-weight: 600; font-size: 13.5px; text-transform: uppercase; letter-spacing: 0.8px;">Collections</a></li>
+          <li><a href="#featured" style="text-decoration: none; color: #2D4F3E; font-weight: 600; font-size: 13.5px; text-transform: uppercase; letter-spacing: 0.8px;">Bestsellers</a></li>
+          <li><a href="#wholesale" style="text-decoration: none; color: #2D4F3E; font-weight: 600; font-size: 13.5px; text-transform: uppercase; letter-spacing: 0.8px;">Wholesale B2B</a></li>
+          <li><a href="#showroom" style="text-decoration: none; color: #2D4F3E; font-weight: 600; font-size: 13.5px; text-transform: uppercase; letter-spacing: 0.8px;">Raja Bazaar Showroom</a></li>
+          <li><a href="#footer" style="text-decoration: none; color: #2D4F3E; font-weight: 600; font-size: 13.5px; text-transform: uppercase; letter-spacing: 0.8px;">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Cart Icon -->
+      <div class="header-actions" style="display: flex; align-items: center; gap: 16px;">
+        <a href="https://wa.me/923001234567?text=Hi%20TimeCraft%2C%20I%20have%20an%20inquiry%20regarding%20watches" target="_blank" rel="noopener" class="header-wa-link" style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: #2D4F3E; text-decoration: none; padding: 6px 12px; border-radius: 4px; background: rgba(45, 79, 62, 0.06);">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          <span>WhatsApp</span>
+        </a>
+
+        <a href="#cart" class="header-cart" aria-label="Cart" style="position: relative; color: #2D4F3E; text-decoration: none; display: flex; align-items: center;">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" style="width: 25px; height: 25px;">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 01-8 0"/>
+          </svg>
+          <span class="cart-count" id="header-cart-count" style="position: absolute; top: -6px; right: -8px; background: #C5A46D; color: #fff; font-family: 'Inter', sans-serif; font-size: 10px; font-weight: 700; width: 18px; height: 18px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">2</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Slide-in Nav Drawer -->
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay" onclick="this.classList.remove('active'); document.getElementById('mobile-nav-drawer').classList.remove('active');" style="display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 2000;"></div>
+  
+  <nav class="mobile-nav" id="mobile-nav-drawer" style="position: fixed; top: 0; left: 0; width: 310px; max-width: 85vw; height: 100%; background: #FFFFFF; z-index: 2001; transform: translateX(-100%); transition: transform 0.35s ease; display: flex; flex-direction: column;">
+    <div style="display: flex; align-items: center; justify-content: space-between; padding: 22px 24px; border-bottom: 1px solid #E8E4DF;">
+      <span style="font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: #2D4F3E; letter-spacing: 1.5px;">TIMECRAFT</span>
+      <button onclick="document.getElementById('mobile-nav-drawer').classList.remove('active'); document.getElementById('mobile-nav-overlay').classList.remove('active');" style="background: none; border: none; cursor: pointer; color: #2D4F3E; padding: 4px;" aria-label="Close menu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="width: 22px; height: 22px;">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    </div>
+    <ul style="list-style: none; margin: 0; padding: 16px 0; overflow-y: auto;">
+      <li style="border-bottom: 1px solid #F0ECE6;"><a href="#" style="display: block; padding: 16px 24px; font-size: 15px; font-weight: 600; color: #2D4F3E; text-decoration: none; text-transform: uppercase;">Home</a></li>
+      <li style="border-bottom: 1px solid #F0ECE6;"><a href="#categories" style="display: block; padding: 16px 24px; font-size: 15px; font-weight: 600; color: #2D4F3E; text-decoration: none; text-transform: uppercase;" onclick="document.getElementById('mobile-nav-drawer').classList.remove('active'); document.getElementById('mobile-nav-overlay').classList.remove('active');">Collections</a></li>
+      <li style="border-bottom: 1px solid #F0ECE6;"><a href="#featured" style="display: block; padding: 16px 24px; font-size: 15px; font-weight: 600; color: #2D4F3E; text-decoration: none; text-transform: uppercase;" onclick="document.getElementById('mobile-nav-drawer').classList.remove('active'); document.getElementById('mobile-nav-overlay').classList.remove('active');">Bestsellers</a></li>
+      <li style="border-bottom: 1px solid #F0ECE6;"><a href="#wholesale" style="display: block; padding: 16px 24px; font-size: 15px; font-weight: 600; color: #2D4F3E; text-decoration: none; text-transform: uppercase;" onclick="document.getElementById('mobile-nav-drawer').classList.remove('active'); document.getElementById('mobile-nav-overlay').classList.remove('active');">Wholesale B2B</a></li>
+      <li style="border-bottom: 1px solid #F0ECE6;"><a href="#showroom" style="display: block; padding: 16px 24px; font-size: 15px; font-weight: 600; color: #2D4F3E; text-decoration: none; text-transform: uppercase;" onclick="document.getElementById('mobile-nav-drawer').classList.remove('active'); document.getElementById('mobile-nav-overlay').classList.remove('active');">Raja Bazaar Showroom</a></li>
+      <li><a href="#footer" style="display: block; padding: 16px 24px; font-size: 15px; font-weight: 600; color: #2D4F3E; text-decoration: none; text-transform: uppercase;" onclick="document.getElementById('mobile-nav-drawer').classList.remove('active'); document.getElementById('mobile-nav-overlay').classList.remove('active');">Contact & Location</a></li>
+    </ul>
+    <div style="margin-top: auto; padding: 24px; background: #FAF8F5; border-top: 1px solid #E8E4DF; font-size: 13px; color: #6B6B6B;">
+      <p style="margin: 0 0 8px; font-weight: 600; color: #2D4F3E;">📍 Raja Bazaar, Rawalpindi</p>
+      <p style="margin: 0;">Mon - Sat: 11:00 AM - 9:00 PM</p>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section" style="background-color: #2D4F3E; color: #FFFFFF; position: relative; overflow: hidden; border-bottom: 1px solid rgba(197, 164, 109, 0.25);">
+    <div class="hero-inner" style="max-width: 1320px; margin: 0 auto; padding: 88px 24px; display: flex; align-items: center; gap: 64px;">
+      
+      <!-- Text Content Column -->
+      <div class="hero-text" style="flex: 1.15; min-width: 0;">
+        <div class="hero-eyebrow" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(197, 164, 109, 0.35); color: #C5A46D; font-size: 11.5px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 6px 14px; border-radius: 20px; margin-bottom: 22px;">
+          <span style="width: 6px; height: 6px; border-radius: 50%; background-color: #C5A46D;"></span>
+          <span>Raja Bazaar, Rawalpindi &bull; Authorized Watch Retailer</span>
+        </div>
+
+        <h1 class="hero-heading" style="font-family: 'Playfair Display', serif; font-size: 54px; font-weight: 700; line-height: 1.15; margin: 0 0 20px; color: #FFFFFF; letter-spacing: -0.5px;">
+          Timeless Elegance, Crafted for You
+        </h1>
+        
+        <p class="hero-subheading" style="font-family: 'Inter', sans-serif; font-size: 17px; line-height: 1.7; color: rgba(250, 248, 245, 0.85); margin: 0 0 36px; max-width: 520px;">
+          Explore our curated collection of premium watches, sourced from the heart of Raja Bazaar. Horological craftsmanship you can trust, delivered with Cash on Delivery across Pakistan.
+        </p>
+
+        <div class="hero-actions" style="display: flex; align-items: center; gap: 16px; margin-bottom: 38px; flex-wrap: wrap;">
+          <a href="#featured" class="hero-btn hero-btn--primary" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; background-color: #C5A46D; color: #2D4F3E; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 16px 36px; border-radius: 4px; text-decoration: none;">
+            <span>Shop Collection</span>
+            <span>&rarr;</span>
+          </a>
+          <a href="#wholesale" class="hero-btn hero-btn--secondary" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: transparent; border: 1.5px solid rgba(255, 255, 255, 0.35); color: #FAF8F5; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 16px 36px; border-radius: 4px; text-decoration: none;">
+            <span>Wholesale Catalog</span>
+          </a>
+        </div>
+
+        <div class="hero-trust-bar" style="display: flex; align-items: center; gap: 12px; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.12); font-size: 12px; color: rgba(250, 248, 245, 0.75); flex-wrap: wrap;">
+          <div style="display: inline-flex; align-items: center; gap: 6px; color: rgba(250, 248, 245, 0.85);">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C5A46D" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>Open-Box COD</span>
+          </div>
+          <span style="color: rgba(197, 164, 109, 0.5);">&bull;</span>
+          <div style="display: inline-flex; align-items: center; gap: 6px; color: rgba(250, 248, 245, 0.85);">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C5A46D" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>1-Year Bench Warranty</span>
+          </div>
+          <span style="color: rgba(197, 164, 109, 0.5);">&bull;</span>
+          <div style="display: inline-flex; align-items: center; gap: 6px; color: rgba(250, 248, 245, 0.85);">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#C5A46D" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            <span>2-4 Days TCS Dispatch</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Vector Watch Artwork with Restrained Smooth Motion -->
+      <div class="hero-media" style="flex: 0.95; display: flex; align-items: center; justify-content: center;">
+        <div class="hero-watch-placeholder" style="width: 100%; max-width: 400px; aspect-ratio: 1 / 1;">
+          <svg viewBox="0 0 320 320" fill="none" xmlns="http://www.w3.org/2000/svg" class="hero-watch-svg" style="width: 100%; height: 100%; filter: drop-shadow(0 16px 36px rgba(0, 0, 0, 0.35));" data-live-clock="svg" data-clock-pivot="160 160" aria-label="TIMECRAFT Live Hero Watch">
+            <circle cx="160" cy="160" r="130" fill="url(#hero-ambient-glow)" opacity="0.2"/>
+
+            <!-- Top Havana Leather Strap -->
+            <path d="M125 10 L195 10 L188 75 L132 75 Z" fill="#58311B" stroke="#3D2010" stroke-width="2"/>
+            <line x1="134" y1="18" x2="134" y2="70" stroke="#874B26" stroke-width="1.5" stroke-dasharray="3 3"/>
+            <line x1="186" y1="18" x2="186" y2="70" stroke="#874B26" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+            <!-- Bottom Havana Leather Strap -->
+            <path d="M132 245 L188 245 L195 310 L125 310 Z" fill="#58311B" stroke="#3D2010" stroke-width="2"/>
+            <line x1="134" y1="250" x2="134" y2="302" stroke="#874B26" stroke-width="1.5" stroke-dasharray="3 3"/>
+            <line x1="186" y1="250" x2="186" y2="302" stroke="#874B26" stroke-width="1.5" stroke-dasharray="3 3"/>
+
+            <!-- 18K Yellow Gold Watch Case -->
+            <circle cx="160" cy="160" r="105" fill="#1C382B" stroke="#C5A46D" stroke-width="6"/>
+            <circle cx="160" cy="160" r="96" fill="#152C22" stroke="#9A7B45" stroke-width="1.5"/>
+
+            <!-- Warm Off-White / Parchment Sunburst Dial -->
+            <circle cx="160" cy="160" r="88" fill="#FAF8F5" stroke="#C5A46D" stroke-width="1"/>
+
+            <!-- Railway Minute Track -->
+            <circle cx="160" cy="160" r="80" stroke="#C5A46D" stroke-width="0.8" stroke-dasharray="2 3" opacity="0.6"/>
+
+            <!-- Roman Numerals -->
+            <text x="160" y="102" text-anchor="middle" fill="#2D4F3E" font-family="'Playfair Display', serif" font-size="16" font-weight="700">XII</text>
+            <text x="226" y="166" text-anchor="middle" fill="#2D4F3E" font-family="'Playfair Display', serif" font-size="16" font-weight="700">III</text>
+            <text x="160" y="230" text-anchor="middle" fill="#2D4F3E" font-family="'Playfair Display', serif" font-size="16" font-weight="700">VI</text>
+            <text x="94" y="166" text-anchor="middle" fill="#2D4F3E" font-family="'Playfair Display', serif" font-size="16" font-weight="700">IX</text>
+
+            <!-- Brand Signet on Dial -->
+            <text x="160" y="128" text-anchor="middle" fill="#2D4F3E" font-family="'Playfair Display', serif" font-size="11" font-weight="700" letter-spacing="2">TIMECRAFT</text>
+            <text x="160" y="139" text-anchor="middle" fill="#C5A46D" font-family="'Inter', sans-serif" font-size="5.5" font-weight="600" letter-spacing="1.2">CHRONOMETER • 100M</text>
+
+            <!-- Small Seconds Sub-dial -->
+            <circle cx="160" cy="192" r="14" fill="#F4EFE6" stroke="#C5A46D" stroke-width="0.8"/>
+            <line x1="160" y1="180" x2="160" y2="183" stroke="#2D4F3E" stroke-width="1"/>
+            <line x1="160" y1="201" x2="160" y2="204" stroke="#2D4F3E" stroke-width="1"/>
+
+            <!-- Live Rotating Hands (Asia/Karachi Rawalpindi time) -->
+            <line class="clock-hand clock-hand--hour" x1="160" y1="160" x2="160" y2="106" stroke="#2D4F3E" stroke-width="4.5" stroke-linecap="round" transform="rotate(0 160 160)"/>
+            <line class="clock-hand clock-hand--minute" x1="160" y1="160" x2="160" y2="82" stroke="#2D4F3E" stroke-width="3" stroke-linecap="round" transform="rotate(0 160 160)"/>
+            <line class="clock-hand clock-hand--second" x1="160" y1="184" x2="160" y2="70" stroke="#C5A46D" stroke-width="1.5" stroke-linecap="round" transform="rotate(0 160 160)"/>
+
+            <!-- Center Jewel Pin -->
+            <circle cx="160" cy="160" r="5" fill="#C5A46D"/>
+            <circle cx="160" cy="160" r="2.5" fill="#2D4F3E"/>
+
+            <!-- Fluted Winding Crown -->
+            <rect x="265" y="152" width="12" height="16" rx="2" fill="#C5A46D" stroke="#9A7B45" stroke-width="1.5"/>
+
+            <defs>
+              <radialGradient id="hero-ambient-glow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#C5A46D"/>
+                <stop offset="100%" stop-color="#2D4F3E" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Benefits Row Section -->
+  <section class="benefits-section reveal-on-scroll" style="background: #FAF8F5; padding: 48px 24px; border-top: 1px solid #E8E4DF; border-bottom: 1px solid #E8E4DF;">
+    <div class="benefits-grid reveal-stagger-parent" style="max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;">
+      
+      <!-- Benefit 1 -->
+      <div class="benefit-item reveal-stagger-child" style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 24px 20px; position: relative;">
+        <div class="benefit-icon" style="width: 44px; height: 44px; margin-bottom: 16px; color: #2D4F3E;">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 48 48" stroke="currentColor" stroke-width="2" style="width: 100%; height: 100%;">
+            <rect x="4" y="14" width="26" height="18" rx="2" stroke-linecap="round"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M30 22h8l4 6v4h-12V22z"/>
+            <circle cx="14" cy="34" r="3"/>
+            <circle cx="37" cy="34" r="3"/>
+            <line x1="17" y1="34" x2="34" y2="34"/>
+          </svg>
+        </div>
+        <h3 class="benefit-title" style="font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: #2D4F3E; margin: 0 0 8px;">Nationwide Delivery</h3>
+        <p class="benefit-desc" style="font-family: 'Inter', sans-serif; font-size: 13px; color: #6B6B6B; line-height: 1.5; margin: 0; max-width: 220px;">Free delivery in Rawalpindi & Islamabad; 2-4 days across Pakistan</p>
+      </div>
+
+      <!-- Benefit 2 -->
+      <div class="benefit-item reveal-stagger-child" style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 24px 20px; position: relative;">
+        <div class="benefit-icon" style="width: 44px; height: 44px; margin-bottom: 16px; color: #2D4F3E;">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 48 48" stroke="currentColor" stroke-width="2" style="width: 100%; height: 100%;">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M24 4L6 12v12c0 11 8 18 18 20 10-2 18-9 18-20V12L24 4z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16 24l5 5 11-11"/>
+          </svg>
+        </div>
+        <h3 class="benefit-title" style="font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: #2D4F3E; margin: 0 0 8px;">100% Authentic</h3>
+        <p class="benefit-desc" style="font-family: 'Inter', sans-serif; font-size: 13px; color: #6B6B6B; line-height: 1.5; margin: 0; max-width: 220px;">Every watch verified and sourced from genuine makers</p>
+      </div>
+
+      <!-- Benefit 3 -->
+      <div class="benefit-item reveal-stagger-child" style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 24px 20px; position: relative;">
+        <div class="benefit-icon" style="width: 44px; height: 44px; margin-bottom: 16px; color: #2D4F3E;">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 48 48" stroke="currentColor" stroke-width="2" style="width: 100%; height: 100%;">
+            <circle cx="24" cy="20" r="12"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16 30l-2 14 10-5 10 5-2-14"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20 18l3 3 6-6"/>
+          </svg>
+        </div>
+        <h3 class="benefit-title" style="font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: #2D4F3E; margin: 0 0 8px;">1 Year Warranty</h3>
+        <p class="benefit-desc" style="font-family: 'Inter', sans-serif; font-size: 13px; color: #6B6B6B; line-height: 1.5; margin: 0; max-width: 220px;">Official 1-year movement warranty with local Raja Bazaar support</p>
+      </div>
+
+      <!-- Benefit 4 -->
+      <div class="benefit-item reveal-stagger-child" style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 24px 20px; position: relative;">
+        <div class="benefit-icon" style="width: 44px; height: 44px; margin-bottom: 16px; color: #2D4F3E;">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 48 48" stroke="currentColor" stroke-width="2" style="width: 100%; height: 100%;">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 24a18 18 0 0132-11"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M42 24a18 18 0 01-32 11"/>
+            <polyline points="38,8 38,16 30,16" stroke-linecap="round" stroke-linejoin="round"/>
+            <polyline points="10,40 10,32 18,32" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <h3 class="benefit-title" style="font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: #2D4F3E; margin: 0 0 8px;">Easy Returns & COD</h3>
+        <p class="benefit-desc" style="font-family: 'Inter', sans-serif; font-size: 13px; color: #6B6B6B; line-height: 1.5; margin: 0; max-width: 220px;">Pay on delivery with 7-day hassle-free exchange</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Featured Products Section ("Our Bestsellers") -->
+  <section class="featured-section reveal-on-scroll" id="featured" style="background: #FAF8F5; padding: 88px 24px;">
+    <div class="featured-inner" style="max-width: 1320px; margin: 0 auto;">
+      
+      <div class="featured-header" style="text-align: center; max-width: 640px; margin: 0 auto 52px;">
+        <span class="featured-eyebrow" style="display: inline-block; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #C5A46D; margin-bottom: 8px;">Raja Bazaar Showroom Selection</span>
+        <h2 class="featured-heading" style="font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 700; color: #2D4F3E; margin: 0 0 12px;">Our Bestsellers</h2>
+        <p class="featured-subtitle" style="font-family: 'Inter', sans-serif; font-size: 15px; color: #6B6B6B; margin: 0; line-height: 1.6;">
+          Hand-picked timepieces loved by watch enthusiasts across Pakistan.
+        </p>
+      </div>
+
+      <!-- 4-Column Product Grid -->
+      <div class="featured-grid reveal-stagger-parent" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px;">
+        
+        <!-- Card 1 -->
+        <div class="product-card reveal-stagger-child" style="background: #FFFFFF; border: 1px solid #E8E4DF; border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; position: relative;">
+          <div class="product-card__header-bar" style="display: flex; justify-content: space-between; padding: 10px 14px 6px; position: absolute; top: 0; left: 0; right: 0; z-index: 2;">
+            <span class="product-card__badge" style="background: rgba(45, 79, 62, 0.92); color: #FFFFFF; font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 3px; text-transform: uppercase;">Miyota Automatic • 40mm</span>
+            <span class="product-card__stock-tag" style="background: rgba(197, 164, 109, 0.2); color: #8C6D32; border: 1px solid rgba(197, 164, 109, 0.4); font-size: 9.5px; font-weight: 700; padding: 2px 7px; border-radius: 3px;">In Stock</span>
+          </div>
+          <div class="product-card__media" style="width: 100%; aspect-ratio: 1/1; background: #F4F1EC; display: flex; align-items: center; justify-content: center; padding: 24px;">
+            <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="watch-artwork-svg" style="width: 100%; max-width: 170px; height: auto;" data-live-clock="svg" data-clock-pivot="100 100" aria-label="Royal Sovereign Live Clock">
+              <rect x="76" y="8" width="48" height="42" rx="4" fill="#653D1E" stroke="#462711" stroke-width="1.5"/>
+              <rect x="76" y="150" width="48" height="42" rx="4" fill="#653D1E" stroke="#462711" stroke-width="1.5"/>
+              <circle cx="100" cy="100" r="54" fill="#2D4F3E" stroke="#C5A46D" stroke-width="4.5"/>
+              <circle cx="100" cy="100" r="48" fill="#FBF8F3" stroke="#E2D7C3" stroke-width="1.5"/>
+              <line x1="100" y1="54" x2="100" y2="62" stroke="#C5A46D" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="100" y1="138" x2="100" y2="146" stroke="#C5A46D" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="54" y1="100" x2="62" y2="100" stroke="#C5A46D" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="138" y1="100" x2="146" y2="100" stroke="#C5A46D" stroke-width="2.5" stroke-linecap="round"/>
+              <text x="100" y="82" text-anchor="middle" fill="#2D4F3E" font-family="'Playfair Display', serif" font-size="7" font-weight="700">TIMECRAFT</text>
+              <text x="100" y="90" text-anchor="middle" fill="#C5A46D" font-family="'Inter', sans-serif" font-size="4.5" font-weight="600">AUTOMATIC</text>
+              <!-- Live Rotating Hands -->
+              <line class="clock-hand clock-hand--hour" x1="100" y1="100" x2="100" y2="70" stroke="#2D4F3E" stroke-width="2.6" stroke-linecap="round" transform="rotate(0 100 100)"/>
+              <line class="clock-hand clock-hand--minute" x1="100" y1="100" x2="100" y2="58" stroke="#2D4F3E" stroke-width="1.8" stroke-linecap="round" transform="rotate(0 100 100)"/>
+              <line class="clock-hand clock-hand--second" x1="100" y1="112" x2="100" y2="54" stroke="#C5A46D" stroke-width="1.1" stroke-linecap="round" transform="rotate(0 100 100)"/>
+              <circle cx="100" cy="100" r="3.2" fill="#C5A46D"/>
+              <circle cx="100" cy="100" r="1.4" fill="#2D4F3E"/>
+              <rect x="153" y="95" width="7" height="10" rx="1.5" fill="#C5A46D"/>
+            </svg>
+          </div>
+          <div class="product-card__body" style="padding: 20px 18px; display: flex; flex-direction: column; flex: 1;">
+            <div style="font-size: 11px; font-weight: 600; color: #8C8C8C; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Sapphire Crystal • Havana Alligator Strap</div>
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: #2D4F3E; line-height: 1.35; margin: 0 0 10px; min-height: 42px;">Royal Sovereign 18K Gold Automatic</h3>
+            <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 16px;">
+              <span style="font-size: 13px; color: #9E9E9E; text-decoration: line-through;">Rs. 22,000</span>
+              <span style="font-size: 18px; font-weight: 700; color: #2D4F3E;">Rs. 18,500</span>
+            </div>
+            <button type="button" class="btn-primary product-card__btn" onclick="triggerCartToast('Royal Sovereign 18K Gold Automatic', 'Rs. 18,500')" style="width: 100%; background: #2D4F3E; color: #FFFFFF; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; padding: 12px; border: none; border-radius: 4px; cursor: pointer;">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="product-card reveal-stagger-child" style="background: #FFFFFF; border: 1px solid #E8E4DF; border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; position: relative;">
+          <div class="product-card__header-bar" style="display: flex; justify-content: space-between; padding: 10px 14px 6px; position: absolute; top: 0; left: 0; right: 0; z-index: 2;">
+            <span class="product-card__badge" style="background: rgba(45, 79, 62, 0.92); color: #FFFFFF; font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 3px; text-transform: uppercase;">Precision Quartz • 39mm</span>
+            <span class="product-card__stock-tag" style="background: rgba(197, 164, 109, 0.2); color: #8C6D32; border: 1px solid rgba(197, 164, 109, 0.4); font-size: 9.5px; font-weight: 700; padding: 2px 7px; border-radius: 3px;">In Stock</span>
+          </div>
+          <div class="product-card__media" style="width: 100%; aspect-ratio: 1/1; background: #F4F1EC; display: flex; align-items: center; justify-content: center; padding: 24px;">
+            <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="watch-artwork-svg" style="width: 100%; max-width: 170px; height: auto;" data-live-clock="svg" data-clock-pivot="100 100" aria-label="Heritage Classic Live Clock">
+              <rect x="75" y="8" width="50" height="42" rx="3" fill="#D3D9DE" stroke="#8E9DA8" stroke-width="1.5"/>
+              <rect x="75" y="150" width="50" height="42" rx="3" fill="#D3D9DE" stroke="#8E9DA8" stroke-width="1.5"/>
+              <circle cx="100" cy="100" r="54" fill="#1C2D37" stroke="#A9B7C1" stroke-width="4"/>
+              <circle cx="100" cy="100" r="48" fill="#121D24" stroke="#485A66" stroke-width="1.2"/>
+              <rect x="131" y="94" width="12" height="12" rx="1.5" fill="#FFFFFF"/>
+              <text x="137" y="103" text-anchor="middle" fill="#121D24" font-family="'Inter', sans-serif" font-size="7" font-weight="700">18</text>
+              <text x="100" y="81" text-anchor="middle" fill="#FFFFFF" font-family="'Playfair Display', serif" font-size="7" font-weight="700">TIMECRAFT</text>
+              <text x="100" y="89" text-anchor="middle" fill="#A9B7C1" font-family="'Inter', sans-serif" font-size="4.5" font-weight="500">SAPPHIRE • 50M</text>
+              <!-- Live Rotating Hands -->
+              <line class="clock-hand clock-hand--hour" x1="100" y1="100" x2="100" y2="70" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" transform="rotate(0 100 100)"/>
+              <line class="clock-hand clock-hand--minute" x1="100" y1="100" x2="100" y2="58" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" transform="rotate(0 100 100)"/>
+              <line class="clock-hand clock-hand--second" x1="100" y1="112" x2="100" y2="54" stroke="#E65100" stroke-width="1.1" stroke-linecap="round" transform="rotate(0 100 100)"/>
+              <circle cx="100" cy="100" r="3" fill="#E65100"/>
+              <circle cx="100" cy="100" r="1.3" fill="#FFFFFF"/>
+              <rect x="153" y="95" width="6" height="10" rx="1.5" fill="#D3D9DE"/>
+            </svg>
+          </div>
+          <div class="product-card__body" style="padding: 20px 18px; display: flex; flex-direction: column; flex: 1;">
+            <div style="font-size: 11px; font-weight: 600; color: #8C8C8C; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Sunburst Navy Dial • Oyster Link Bracelet</div>
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: #2D4F3E; line-height: 1.35; margin: 0 0 10px; min-height: 42px;">Heritage Classic 316L Stainless Steel</h3>
+            <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 16px;">
+              <span style="font-size: 13px; color: #9E9E9E; text-decoration: line-through;">Rs. 16,500</span>
+              <span style="font-size: 18px; font-weight: 700; color: #2D4F3E;">Rs. 14,200</span>
+            </div>
+            <button type="button" class="btn-primary product-card__btn" onclick="triggerCartToast('Heritage Classic 316L Stainless Steel', 'Rs. 14,200')" style="width: 100%; background: #2D4F3E; color: #FFFFFF; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; padding: 12px; border: none; border-radius: 4px; cursor: pointer;">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="product-card reveal-stagger-child" style="background: #FFFFFF; border: 1px solid #E8E4DF; border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; position: relative;">
+          <div class="product-card__header-bar" style="display: flex; justify-content: space-between; padding: 10px 14px 6px; position: absolute; top: 0; left: 0; right: 0; z-index: 2;">
+            <span class="product-card__badge" style="background: rgba(45, 79, 62, 0.92); color: #FFFFFF; font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 3px; text-transform: uppercase;">Chrono Calibre • 42mm</span>
+            <span class="product-card__stock-tag" style="background: rgba(197, 164, 109, 0.2); color: #8C6D32; border: 1px solid rgba(197, 164, 109, 0.4); font-size: 9.5px; font-weight: 700; padding: 2px 7px; border-radius: 3px;">In Stock</span>
+          </div>
+          <div class="product-card__media" style="width: 100%; aspect-ratio: 1/1; background: #F4F1EC; display: flex; align-items: center; justify-content: center; padding: 24px;">
+            <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="watch-artwork-svg" style="width: 100%; max-width: 170px; height: auto;" data-live-clock="svg" data-clock-pivot="100 100" aria-label="Vanguard Chronograph Live Clock">
+              <rect x="75" y="8" width="50" height="42" rx="3" fill="#202224" stroke="#37393D" stroke-width="1.5"/>
+              <rect x="75" y="150" width="50" height="42" rx="3" fill="#202224" stroke="#37393D" stroke-width="1.5"/>
+              <circle cx="100" cy="100" r="54" fill="#1C1E20" stroke="#C5A46D" stroke-width="3"/>
+              <circle cx="100" cy="100" r="48" fill="#141517" stroke="#2B2E33" stroke-width="1.2"/>
+              <circle cx="100" cy="116" r="10" stroke="#C5A46D" stroke-width="0.8" fill="#1C1E20"/>
+              <circle cx="84" cy="100" r="9" stroke="#C5A46D" stroke-width="0.8" fill="#1C1E20"/>
+              <circle cx="116" cy="100" r="9" stroke="#C5A46D" stroke-width="0.8" fill="#1C1E20"/>
+              <text x="100" y="79" text-anchor="middle" fill="#FFFFFF" font-family="'Playfair Display', serif" font-size="7" font-weight="700">TIMECRAFT</text>
+              <text x="100" y="86" text-anchor="middle" fill="#C5A46D" font-family="'Inter', sans-serif" font-size="4.2" font-weight="700">CHRONO 100M</text>
+              <!-- Live Rotating Hands -->
+              <line class="clock-hand clock-hand--hour" x1="100" y1="100" x2="100" y2="70" stroke="#C5A46D" stroke-width="2.4" stroke-linecap="round" transform="rotate(0 100 100)"/>
+              <line class="clock-hand clock-hand--minute" x1="100" y1="100" x2="100" y2="58" stroke="#C5A46D" stroke-width="1.8" stroke-linecap="round" transform="rotate(0 100 100)"/>
+              <line class="clock-hand clock-hand--second" x1="100" y1="112" x2="100" y2="54" stroke="#D32F2F" stroke-width="1.1" stroke-linecap="round" transform="rotate(0 100 100)"/>
+              <circle cx="100" cy="100" r="2.8" fill="#D32F2F"/>
+              <circle cx="100" cy="100" r="1.3" fill="#C5A46D"/>
+              <rect x="151" y="87" width="4" height="6" rx="1" fill="#C5A46D"/>
+              <rect x="152" y="96" width="5" height="8" rx="1" fill="#C5A46D"/>
+            </svg>
+          </div>
+          <div class="product-card__body" style="padding: 20px 18px; display: flex; flex-direction: column; flex: 1;">
+            <div style="font-size: 11px; font-weight: 600; color: #8C8C8C; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Ceramic Bezel • Triple Sub-Dials • 100M</div>
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: #2D4F3E; line-height: 1.35; margin: 0 0 10px; min-height: 42px;">Vanguard Stealth Chronograph 100M</h3>
+            <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 16px;">
+              <span style="font-size: 13px; color: #9E9E9E; text-decoration: line-through;">Rs. 25,500</span>
+              <span style="font-size: 18px; font-weight: 700; color: #2D4F3E;">Rs. 22,000</span>
+            </div>
+            <button type="button" class="btn-primary product-card__btn" onclick="triggerCartToast('Vanguard Stealth Chronograph 100M', 'Rs. 22,000')" style="width: 100%; background: #2D4F3E; color: #FFFFFF; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; padding: 12px; border: none; border-radius: 4px; cursor: pointer;">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="product-card reveal-stagger-child" style="background: #FFFFFF; border: 1px solid #E8E4DF; border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; position: relative;">
+          <div class="product-card__header-bar" style="display: flex; justify-content: space-between; padding: 10px 14px 6px; position: absolute; top: 0; left: 0; right: 0; z-index: 2;">
+            <span class="product-card__badge" style="background: rgba(45, 79, 62, 0.92); color: #FFFFFF; font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 3px; text-transform: uppercase;">Fluted Bezel • 38mm</span>
+            <span class="product-card__stock-tag" style="background: rgba(197, 164, 109, 0.2); color: #8C6D32; border: 1px solid rgba(197, 164, 109, 0.4); font-size: 9.5px; font-weight: 700; padding: 2px 7px; border-radius: 3px;">In Stock</span>
+          </div>
+          <div class="product-card__media" style="width: 100%; aspect-ratio: 1/1; background: #F4F1EC; display: flex; align-items: center; justify-content: center; padding: 24px;">
+            <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="watch-artwork-svg" style="width: 100%; max-width: 170px; height: auto;" data-live-clock="svg" data-clock-pivot="100 100" aria-label="Elegance Leather Rose Live Clock">
+              <rect x="77" y="8" width="46" height="42" rx="3" fill="#58311B" stroke="#3D2010" stroke-width="1.5"/>
+              <rect x="77" y="150" width="46" height="42" rx="3" fill="#58311B" stroke="#3D2010" stroke-width="1.5"/>
+              <circle cx="100" cy="100" r="54" fill="#1C382B" stroke="#C5A46D" stroke-width="4.5"/>
+              <circle cx="100" cy="100" r="48" fill="#163124" stroke="#C5A46D" stroke-width="1.5"/>
+              <text x="100" y="82" text-anchor="middle" fill="#FFFFFF" font-family="'Playfair Display', serif" font-size="7" font-weight="700">TIMECRAFT</text>
+              <text x="100" y="90" text-anchor="middle" fill="#C5A46D" font-family="'Inter', sans-serif" font-size="4.5" font-weight="600">CALIBRE 8215</text>
+              <!-- Live Rotating Hands -->
+              <line class="clock-hand clock-hand--hour" x1="100" y1="100" x2="100" y2="70" stroke="#C5A46D" stroke-width="2.5" stroke-linecap="round" transform="rotate(0 100 100)"/>
+              <line class="clock-hand clock-hand--minute" x1="100" y1="100" x2="100" y2="58" stroke="#C5A46D" stroke-width="1.8" stroke-linecap="round" transform="rotate(0 100 100)"/>
+              <line class="clock-hand clock-hand--second" x1="100" y1="112" x2="100" y2="54" stroke="#FFFFFF" stroke-width="1.1" stroke-linecap="round" transform="rotate(0 100 100)"/>
+              <circle cx="100" cy="100" r="3" fill="#C5A46D"/>
+              <circle cx="100" cy="100" r="1.4" fill="#1C382B"/>
+              <rect x="153" y="95" width="6" height="10" rx="1.5" fill="#C5A46D"/>
+            </svg>
+          </div>
+          <div class="product-card__body" style="padding: 20px 18px; display: flex; flex-direction: column; flex: 1;">
+            <div style="font-size: 11px; font-weight: 600; color: #8C8C8C; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Sunray Emerald Dial • Italian Calfskin</div>
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; color: #2D4F3E; line-height: 1.35; margin: 0 0 10px; min-height: 42px;">Elegance Leather Rose Emerald Dial</h3>
+            <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 16px;">
+              <span style="font-size: 13px; color: #9E9E9E; text-decoration: line-through;">Rs. 13,500</span>
+              <span style="font-size: 18px; font-weight: 700; color: #2D4F3E;">Rs. 11,800</span>
+            </div>
+            <button type="button" class="btn-primary product-card__btn" onclick="triggerCartToast('Elegance Leather Rose Emerald Dial', 'Rs. 11,800')" style="width: 100%; background: #2D4F3E; color: #FFFFFF; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; padding: 12px; border: none; border-radius: 4px; cursor: pointer;">Add to Cart</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- View All Button -->
+      <div style="text-align: center; margin-top: 52px;">
+        <a href="#categories" style="display: inline-flex; align-items: center; gap: 10px; border: 2px solid #2D4F3E; color: #2D4F3E; font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; padding: 14px 40px; border-radius: 4px; text-decoration: none; transition: all 0.25s ease;">
+          <span>View All 24 Watches</span>
+          <span>&rarr;</span>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Shop by Category Section (Spacious 3-Column Layout with ZERO Clipped Text) -->
+  <section class="collection-tiles-section reveal-on-scroll" id="categories" style="background-color: #FAF8F5; padding: 88px 24px; border-top: 1px solid #EBE7E0;">
+    <div style="max-width: 1320px; margin: 0 auto;">
+      
+      <div style="text-align: center; max-width: 680px; margin: 0 auto 52px;">
+        <span style="display: inline-block; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; color: #C5A46D; margin-bottom: 8px;">Curated Timepieces</span>
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 700; color: #2D4F3E; line-height: 1.2; margin: 0 0 12px;">Shop by Category</h2>
+        <p style="font-family: 'Inter', sans-serif; font-size: 15px; color: #6B6B6B; line-height: 1.6; margin: 0;">
+          From heritage mechanical movements to high-performance chronographs, explore our most coveted watch collections.
+        </p>
+      </div>
+
+      <!-- 3 Spacious Equal-Width Portrait Cards -->
+      <div class="category-tiles-grid reveal-stagger-parent" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px;">
+        
+        <!-- Category Card 1: Classic Watches -->
+        <div class="category-tile reveal-stagger-child" style="border-radius: 8px; overflow: hidden; background: #1E3A2B; box-shadow: 0 4px 20px rgba(45, 79, 62, 0.08); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);">
+          <a href="#featured" style="display: flex; flex-direction: column; height: 100%; min-height: 440px; text-decoration: none; color: inherit; position: relative;">
+            
+            <div style="position: absolute; inset: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(145deg, #1A3627 0%, #11261B 100%);">
+              <svg viewBox="0 0 280 350" fill="none" xmlns="http://www.w3.org/2000/svg" class="category-svg" style="width: 100%; max-width: 250px; height: auto; filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.35));" data-live-clock="svg" data-clock-pivot="140 175" aria-label="Classic Watches Live Clock">
+                <circle cx="140" cy="175" r="120" fill="#C5A46D" opacity="0.12"/>
+                <path d="M105 10 L175 10 L170 85 L110 85 Z" fill="#6B4226" stroke="#52311A" stroke-width="2"/>
+                <path d="M110 265 L170 265 L175 340 L105 340 Z" fill="#6B4226" stroke="#52311A" stroke-width="2"/>
+                <circle cx="140" cy="175" r="90" fill="#243F32" stroke="#C5A46D" stroke-width="6"/>
+                <circle cx="140" cy="175" r="82" fill="#FAF8F5" stroke="#E0D5C1" stroke-width="2"/>
+                <text x="140" y="118" text-anchor="middle" fill="#2D4F3E" font-family="'Playfair Display', serif" font-size="14" font-weight="700">XII</text>
+                <text x="140" y="246" text-anchor="middle" fill="#2D4F3E" font-family="'Playfair Display', serif" font-size="14" font-weight="700">VI</text>
+                <text x="204" y="180" text-anchor="middle" fill="#2D4F3E" font-family="'Playfair Display', serif" font-size="14" font-weight="700">III</text>
+                <text x="76" y="180" text-anchor="middle" fill="#2D4F3E" font-family="'Playfair Display', serif" font-size="14" font-weight="700">IX</text>
+                <text x="140" y="145" text-anchor="middle" fill="#2D4F3E" font-family="'Playfair Display', serif" font-size="10" font-weight="700" letter-spacing="2">TIMECRAFT</text>
+                <text x="140" y="156" text-anchor="middle" fill="#C5A46D" font-family="'Inter', sans-serif" font-size="6" font-weight="600" letter-spacing="1.5">HERITAGE CLASSIC</text>
+                <!-- Live Blued Hands (Asia/Karachi Rawalpindi time) -->
+                <line class="clock-hand clock-hand--hour" x1="140" y1="175" x2="140" y2="128" stroke="#1A334A" stroke-width="3.5" stroke-linecap="round" transform="rotate(0 140 175)"/>
+                <line class="clock-hand clock-hand--minute" x1="140" y1="175" x2="140" y2="110" stroke="#1A334A" stroke-width="2.2" stroke-linecap="round" transform="rotate(0 140 175)"/>
+                <line class="clock-hand clock-hand--second" x1="140" y1="195" x2="140" y2="102" stroke="#C5A46D" stroke-width="1.2" stroke-linecap="round" transform="rotate(0 140 175)"/>
+                <circle cx="140" cy="175" r="4" fill="#C5A46D"/>
+                <circle cx="140" cy="175" r="1.5" fill="#1A334A"/>
+                <rect x="230" y="168" width="10" height="14" rx="2" fill="#C5A46D"/>
+              </svg>
+            </div>
+
+            <!-- Scrim Overlay with Title & Subtitle (Never Cropped) -->
+            <div style="position: relative; z-index: 2; margin-top: auto; padding: 70px 28px 28px; background: linear-gradient(to top, rgba(14, 29, 21, 0.95) 0%, rgba(14, 29, 21, 0.75) 55%, transparent 100%); display: flex; flex-direction: column;">
+              <span style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #C5A46D; margin-bottom: 6px;">Heritage & Dress Watches</span>
+              <h3 style="font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: #FAF8F5; line-height: 1.25; margin: 0 0 14px;">Classic Watches</h3>
+              <div style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: #FAF8F5; border-bottom: 1.5px solid #C5A46D; padding-bottom: 4px; align-self: flex-start;">
+                <span>Explore Collection</span>
+                <span>&rarr;</span>
+              </div>
+            </div>
+
+          </a>
+        </div>
+
+        <!-- Category Card 2: Sports & Chrono -->
+        <div class="category-tile reveal-stagger-child" style="border-radius: 8px; overflow: hidden; background: #1B2830; box-shadow: 0 4px 20px rgba(45, 79, 62, 0.08); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);">
+          <a href="#featured" style="display: flex; flex-direction: column; height: 100%; min-height: 440px; text-decoration: none; color: inherit; position: relative;">
+            
+            <div style="position: absolute; inset: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(145deg, #1B2830 0%, #111B20 100%);">
+              <svg viewBox="0 0 280 350" fill="none" xmlns="http://www.w3.org/2000/svg" data-live-clock="svg" data-clock-pivot="140 175" style="width: 100%; max-width: 250px; height: auto; filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.35));">
+                <path d="M102 10 L178 10 L172 85 L108 85 Z" fill="#D3D9DE" stroke="#9EABB5" stroke-width="2"/>
+                <path d="M108 265 L172 265 L178 340 L102 340 Z" fill="#D3D9DE" stroke="#9EABB5" stroke-width="2"/>
+                <circle cx="140" cy="175" r="92" fill="#1A2024" stroke="#48535A" stroke-width="5"/>
+                <circle cx="140" cy="175" r="82" fill="#1E282D" stroke="#C5A46D" stroke-width="1.5"/>
+                <circle cx="140" cy="205" r="18" fill="#131B1E" stroke="#48535A" stroke-width="1"/>
+                <circle cx="112" cy="175" r="15" fill="#131B1E" stroke="#48535A" stroke-width="1"/>
+                <circle cx="168" cy="175" r="15" fill="#131B1E" stroke="#48535A" stroke-width="1"/>
+                <text x="140" y="142" text-anchor="middle" fill="#FFFFFF" font-family="'Playfair Display', serif" font-size="10" font-weight="700" letter-spacing="1.5">TIMECRAFT</text>
+                <text x="140" y="152" text-anchor="middle" fill="#C5A46D" font-family="'Inter', sans-serif" font-size="6" font-weight="700" letter-spacing="1">CHRONOGRAPH 100M</text>
+                <!-- Live analog hands: Sports Chrono -->
+                <line class="clock-hand clock-hand--hour" x1="140" y1="175" x2="140" y2="125" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round"/>
+                <line class="clock-hand clock-hand--minute" x1="140" y1="175" x2="140" y2="105" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round"/>
+                <line class="clock-hand clock-hand--second" x1="140" y1="188" x2="140" y2="98" stroke="#E65100" stroke-width="1.5" stroke-linecap="round"/>
+                <circle cx="140" cy="175" r="4.5" fill="#E65100"/>
+                <rect x="231" y="152" width="7" height="9" rx="1.5" fill="#D3D9DE"/>
+                <rect x="232" y="169" width="9" height="12" rx="2" fill="#D3D9DE"/>
+                <rect x="231" y="189" width="7" height="9" rx="1.5" fill="#D3D9DE"/>
+              </svg>
+            </div>
+
+            <!-- Scrim Overlay with Title & Subtitle -->
+            <div style="position: relative; z-index: 2; margin-top: auto; padding: 70px 28px 28px; background: linear-gradient(to top, rgba(14, 23, 29, 0.95) 0%, rgba(14, 23, 29, 0.75) 55%, transparent 100%); display: flex; flex-direction: column;">
+              <span style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #C5A46D; margin-bottom: 6px;">Precision Steel & Durability</span>
+              <h3 style="font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: #FAF8F5; line-height: 1.25; margin: 0 0 14px;">Sports & Chrono</h3>
+              <div style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: #FAF8F5; border-bottom: 1.5px solid #C5A46D; padding-bottom: 4px; align-self: flex-start;">
+                <span>Explore Collection</span>
+                <span>&rarr;</span>
+              </div>
+            </div>
+
+          </a>
+        </div>
+
+        <!-- Category Card 3: Luxury Collection -->
+        <div class="category-tile reveal-stagger-child" style="border-radius: 8px; overflow: hidden; background: #1C382B; box-shadow: 0 4px 20px rgba(45, 79, 62, 0.08); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);">
+          <a href="#featured" style="display: flex; flex-direction: column; height: 100%; min-height: 440px; text-decoration: none; color: inherit; position: relative;">
+            
+            <div style="position: absolute; inset: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(145deg, #1C382B 0%, #0F231B 100%);">
+              <svg viewBox="0 0 280 350" fill="none" xmlns="http://www.w3.org/2000/svg" data-live-clock="svg" data-clock-pivot="140 175" style="width: 100%; max-width: 250px; height: auto; filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.35));">
+                <path d="M104 10 L176 10 L171 85 L109 85 Z" fill="#D3D9DE" stroke="#9EABB5" stroke-width="1.5"/>
+                <rect x="128" y="10" width="24" height="75" fill="#C5A46D"/>
+                <path d="M109 265 L171 265 L176 340 L104 340 Z" fill="#D3D9DE" stroke="#9EABB5" stroke-width="1.5"/>
+                <rect x="128" y="265" width="24" height="75" fill="#C5A46D"/>
+                <circle cx="140" cy="175" r="92" stroke="#C5A46D" stroke-width="5" stroke-dasharray="4 2" fill="#1C382B"/>
+                <circle cx="140" cy="175" r="82" fill="#163124" stroke="#C5A46D" stroke-width="1.5"/>
+                <rect x="195" y="167" width="16" height="16" rx="3" fill="#FFFFFF" stroke="#C5A46D" stroke-width="1.5"/>
+                <text x="203" y="179" text-anchor="middle" fill="#2D4F3E" font-family="'Inter', sans-serif" font-size="9" font-weight="700">21</text>
+                <text x="140" y="142" text-anchor="middle" fill="#FFFFFF" font-family="'Playfair Display', serif" font-size="11" font-weight="700" letter-spacing="2">TIMECRAFT</text>
+                <text x="140" y="153" text-anchor="middle" fill="#C5A46D" font-family="'Inter', sans-serif" font-size="6" font-weight="600" letter-spacing="1.5">PERPETUAL AUTOMATIC</text>
+                <!-- Live analog hands: Luxury Collection -->
+                <line class="clock-hand clock-hand--hour" x1="140" y1="175" x2="140" y2="125" stroke="#C5A46D" stroke-width="3.5" stroke-linecap="round"/>
+                <line class="clock-hand clock-hand--minute" x1="140" y1="175" x2="140" y2="105" stroke="#C5A46D" stroke-width="2.5" stroke-linecap="round"/>
+                <line class="clock-hand clock-hand--second" x1="140" y1="188" x2="140" y2="98" stroke="#FFFFFF" stroke-width="1" stroke-linecap="round"/>
+                <circle cx="140" cy="175" r="4.5" fill="#C5A46D"/>
+                <rect x="232" y="167" width="9" height="16" rx="2" fill="#C5A46D"/>
+              </svg>
+            </div>
+
+            <!-- Scrim Overlay with Title & Subtitle -->
+            <div style="position: relative; z-index: 2; margin-top: auto; padding: 70px 28px 28px; background: linear-gradient(to top, rgba(14, 29, 21, 0.95) 0%, rgba(14, 29, 21, 0.75) 55%, transparent 100%); display: flex; flex-direction: column;">
+              <span style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; color: #C5A46D; margin-bottom: 6px;">Automatic & Gold Accents</span>
+              <h3 style="font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: #FAF8F5; line-height: 1.25; margin: 0 0 14px;">Luxury Collection</h3>
+              <div style="display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: #FAF8F5; border-bottom: 1.5px solid #C5A46D; padding-bottom: 4px; align-self: flex-start;">
+                <span>Explore Collection</span>
+                <span>&rarr;</span>
+              </div>
+            </div>
+
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Unified Wholesale & Bulk Distribution Section (Seamless 2-Column Section, Zero Awkward Space) -->
+  <section class="wholesale-unified-section reveal-on-scroll" id="wholesale" style="background-color: #2D4F3E; color: #FAF8F5; padding: 88px 24px; position: relative;">
+    <div class="wholesale-unified-container" style="max-width: 1320px; margin: 0 auto;">
+      
+      <div class="wholesale-unified-card" style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 60px; align-items: center;">
+        
+        <!-- Left Column: Value Proposition -->
+        <div class="wholesale-content-col">
+          <span class="wholesale-badge" style="display: inline-block; align-self: flex-start; background: rgba(197, 164, 109, 0.2); color: #C5A46D; border: 1px solid rgba(197, 164, 109, 0.4); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; padding: 6px 14px; border-radius: 30px; margin-bottom: 20px;">Raja Bazaar Wholesale Hub</span>
+          <h2 class="wholesale-heading" style="font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 700; line-height: 1.2; color: #FFFFFF; margin: 0 0 16px;">Wholesale & Bulk Orders for Retailers</h2>
+          <p class="wholesale-description" style="font-size: 16px; line-height: 1.7; color: rgba(250, 248, 245, 0.85); margin: 0 0 32px;">
+            Supplying watch retailers, jewellery stores, and corporate gift buyers across Pakistan. Access factory-direct pricing, guaranteed authenticity, and flexible order quantities directly from Raja Bazaar.
+          </p>
+
+          <div class="wholesale-perks" style="display: flex; flex-direction: column; gap: 18px; margin-bottom: 36px;">
+            <div style="display: flex; align-items: flex-start; gap: 14px;">
+              <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(197, 164, 109, 0.2); color: #C5A46D; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div style="font-size: 14px; line-height: 1.5; color: rgba(250, 248, 245, 0.9);">
+                <strong style="color: #FFFFFF;">Tiered Margin Discounts:</strong> Save 20% to 38% on volume tiers with transparent distributor rate-sheets.
+              </div>
+            </div>
+
+            <div style="display: flex; align-items: flex-start; gap: 14px;">
+              <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(197, 164, 109, 0.2); color: #C5A46D; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div style="font-size: 14px; line-height: 1.5; color: rgba(250, 248, 245, 0.9);">
+                <strong style="color: #FFFFFF;">Flexible Low MOQ:</strong> Start stocking with low trial minimums (starting from just 10 pieces).
+              </div>
+            </div>
+
+            <div style="display: flex; align-items: flex-start; gap: 14px;">
+              <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(197, 164, 109, 0.2); color: #C5A46D; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div style="font-size: 14px; line-height: 1.5; color: rgba(250, 248, 245, 0.9);">
+                <strong style="color: #FFFFFF;">Insured Nationwide Dispatch:</strong> TCS, Leopard & Cargo dispatch with Cash on Delivery or bank clearance.
+              </div>
+            </div>
+
+            <div style="display: flex; align-items: flex-start; gap: 14px;">
+              <div style="width: 32px; height: 32px; border-radius: 50%; background: rgba(197, 164, 109, 0.2); color: #C5A46D; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div style="font-size: 14px; line-height: 1.5; color: rgba(250, 248, 245, 0.9);">
+                <strong style="color: #FFFFFF;">Workshop Warranty & Bench Support:</strong> Direct access to our Rawalpindi technician bench for replacement parts and service.
+              </div>
+            </div>
+          </div>
+
+          <div style="padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.15);">
+            <p style="font-size: 13px; color: rgba(250, 248, 245, 0.7); margin: 0 0 10px;">Need immediate stock confirmation or urgent quote?</p>
+            <a href="https://wa.me/923001234567?text=Assalam-o-Alaikum%20TimeCraft%2C%20I%20am%20interested%20in%20wholesale%20watch%20pricing" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 10px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(197, 164, 109, 0.4); color: #C5A46D; font-size: 14px; font-weight: 600; padding: 12px 20px; border-radius: 4px; text-decoration: none;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              <span>WhatsApp Wholesale Desk (+92 300 1234567)</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Interactive Form -->
+        <div class="wholesale-form-col">
+          <div class="wholesale-form-card" style="background: #FFFFFF; color: #2C2C2C; border-radius: 8px; padding: 40px; box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);">
+            <div style="margin-bottom: 24px;">
+              <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: #2D4F3E; margin: 0 0 8px;">Request B2B Catalog & Rates</h3>
+              <p style="font-size: 13px; color: #6B6B6B; line-height: 1.5; margin: 0;">Fill in your shop details to receive wholesale price tiers and MOQ details.</p>
+            </div>
+
+            <form id="demo-wholesale-form" onsubmit="event.preventDefault(); showWholesaleSuccess();" style="display: flex; flex-direction: column; gap: 16px;">
+              
+              <div id="demo-wholesale-success" style="display: none; background: #EBF5F0; color: #1E6641; border: 1px solid #B8E2CB; border-radius: 6px; padding: 14px 16px; font-size: 13.5px; line-height: 1.5;">
+                <strong>Shukriya! Wholesale Request Received.</strong>
+                <p style="margin: 4px 0 0;">Our Raja Bazaar sales representative will contact you via WhatsApp / Phone within 24 hours with our catalog and rate sheet.</p>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                <div>
+                  <label style="display: block; font-size: 12.5px; font-weight: 600; color: #2D4F3E; margin-bottom: 6px;">Your Name <span style="color: #D32F2F;">*</span></label>
+                  <input type="text" placeholder="e.g. Tariq Mehmood" required style="width: 100%; padding: 11px 14px; border: 1px solid #D8D4CC; border-radius: 4px; font-size: 14px; box-sizing: border-box; background: #FAF8F5;">
+                </div>
+                <div>
+                  <label style="display: block; font-size: 12.5px; font-weight: 600; color: #2D4F3E; margin-bottom: 6px;">Shop / Business Name <span style="color: #D32F2F;">*</span></label>
+                  <input type="text" placeholder="e.g. Al-Madina Watch Co." required style="width: 100%; padding: 11px 14px; border: 1px solid #D8D4CC; border-radius: 4px; font-size: 14px; box-sizing: border-box; background: #FAF8F5;">
+                </div>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                <div>
+                  <label style="display: block; font-size: 12.5px; font-weight: 600; color: #2D4F3E; margin-bottom: 6px;">WhatsApp / Phone <span style="color: #D32F2F;">*</span></label>
+                  <input type="tel" placeholder="0300-1234567" required style="width: 100%; padding: 11px 14px; border: 1px solid #D8D4CC; border-radius: 4px; font-size: 14px; box-sizing: border-box; background: #FAF8F5;">
+                </div>
+                <div>
+                  <label style="display: block; font-size: 12.5px; font-weight: 600; color: #2D4F3E; margin-bottom: 6px;">City <span style="color: #D32F2F;">*</span></label>
+                  <input type="text" placeholder="e.g. Rawalpindi, Lahore" required style="width: 100%; padding: 11px 14px; border: 1px solid #D8D4CC; border-radius: 4px; font-size: 14px; box-sizing: border-box; background: #FAF8F5;">
+                </div>
+              </div>
+
+              <div>
+                <label style="display: block; font-size: 12.5px; font-weight: 600; color: #2D4F3E; margin-bottom: 6px;">Estimated Order Quantity</label>
+                <select style="width: 100%; padding: 11px 14px; border: 1px solid #D8D4CC; border-radius: 4px; font-size: 14px; box-sizing: border-box; background: #FAF8F5;">
+                  <option>10 - 25 pieces (Trial Retail Tier - 22% discount)</option>
+                  <option>25 - 50 pieces (Semi-Wholesale Tier - 28% discount)</option>
+                  <option>50 - 100 pieces (Distributor Tier - 35% discount)</option>
+                  <option>100+ pieces (Carton / Importer Tier)</option>
+                </select>
+              </div>
+
+              <div>
+                <label style="display: block; font-size: 12.5px; font-weight: 600; color: #2D4F3E; margin-bottom: 6px;">Watch Models / Special Requirements</label>
+                <textarea rows="3" placeholder="Mention preferred watch styles (Automatic, Chrono, Leather) or budget per piece..." style="width: 100%; padding: 11px 14px; border: 1px solid #D8D4CC; border-radius: 4px; font-size: 14px; box-sizing: border-box; background: #FAF8F5;"></textarea>
+              </div>
+
+              <button type="submit" style="background-color: #2D4F3E; color: #FFFFFF; border: none; border-radius: 4px; padding: 15px 24px; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px;">
+                <span>Submit Wholesale Request</span>
+                <span>&rarr;</span>
+              </button>
+
+              <p style="font-size: 11.5px; color: #8C8C8C; text-align: center; margin: 4px 0 0;">
+                🔒 Your contact details are kept strictly confidential and only used for verified wholesale correspondence.
+              </p>
+
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Showroom Trust & Location Strip -->
+  <section class="showroom-strip" id="showroom">
+    <div class="showroom-strip__inner">
+      <div class="showroom-strip__col">
+        <div class="showroom-strip__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div>
+          <strong style="color: #2D4F3E;">Raja Bazaar Showroom:</strong>
+          <span>Shop #14, Main Watch Market, Raja Bazaar, Rawalpindi (Near Liaquat Road)</span>
+        </div>
+      </div>
+      <div class="showroom-strip__col">
+        <div class="showroom-strip__icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div>
+          <strong style="color: #2D4F3E;">Opening Hours:</strong>
+          <span>Mon - Sat: 11:00 AM &ndash; 9:00 PM (Closed Sunday)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="site-footer" id="footer" style="background-color: #2D4F3E; color: #FAF8F5; padding: 68px 24px 28px; font-family: 'Inter', sans-serif;">
+    <div style="max-width: 1320px; margin: 0 auto;">
+      
+      <div style="display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(250, 248, 245, 0.15);">
+        
+        <!-- Col 1: Brand & Social -->
+        <div>
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 24px; color: #C5A46D; margin: 0 0 16px; letter-spacing: 1.5px;">TIMECRAFT</h3>
+          <p style="font-size: 14px; line-height: 1.7; color: rgba(250, 248, 245, 0.8); margin: 0 0 20px;">
+            Your trusted watch destination in Raja Bazaar, Rawalpindi. Offering authentic timepieces, nationwide delivery across Pakistan, and dedicated customer service.
+          </p>
+          <div style="display: flex; gap: 14px; color: #C5A46D;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div>
+          <h4 style="font-family: 'Playfair Display', serif; font-size: 16px; color: #C5A46D; margin: 0 0 16px;">Quick Links</h4>
+          <ul style="list-style: none; margin: 0; padding: 0; line-height: 2; font-size: 14px;">
+            <li><a href="#" style="color: rgba(250, 248, 245, 0.85); text-decoration: none;">Home</a></li>
+            <li><a href="#categories" style="color: rgba(250, 248, 245, 0.85); text-decoration: none;">Collections</a></li>
+            <li><a href="#featured" style="color: rgba(250, 248, 245, 0.85); text-decoration: none;">Bestsellers</a></li>
+            <li><a href="#wholesale" style="color: rgba(250, 248, 245, 0.85); text-decoration: none;">Wholesale Pricing</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Customer Care -->
+        <div>
+          <h4 style="font-family: 'Playfair Display', serif; font-size: 16px; color: #C5A46D; margin: 0 0 16px;">Customer Care</h4>
+          <ul style="list-style: none; margin: 0; padding: 0; line-height: 2; font-size: 14px;">
+            <li><a href="#" style="color: rgba(250, 248, 245, 0.85); text-decoration: none;">Shipping Policy (2-4 Days)</a></li>
+            <li><a href="#" style="color: rgba(250, 248, 245, 0.85); text-decoration: none;">Return & Exchange (7 Days)</a></li>
+            <li><a href="#" style="color: rgba(250, 248, 245, 0.85); text-decoration: none;">1 Year Movement Warranty</a></li>
+            <li><a href="#" style="color: rgba(250, 248, 245, 0.85); text-decoration: none;">Order Tracking (TCS/Leopard)</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact Info -->
+        <div>
+          <h4 style="font-family: 'Playfair Display', serif; font-size: 16px; color: #C5A46D; margin: 0 0 16px;">Showroom Location</h4>
+          <ul style="list-style: none; margin: 0; padding: 0; line-height: 1.8; font-size: 14px; color: rgba(250, 248, 245, 0.85);">
+            <li style="margin-bottom: 8px;">📍 Shop #14, Raja Bazaar, Rawalpindi, Pakistan</li>
+            <li style="margin-bottom: 8px;">📞 +92 300 1234567 (Phone & WhatsApp)</li>
+            <li style="margin-bottom: 8px;">✉️ info@timecraft.pk</li>
+            <li>🕒 Mon - Sat: 11:00 AM - 9:00 PM</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Payment Notice Note -->
+      <div style="padding: 24px 0; border-bottom: 1px solid rgba(250, 248, 245, 0.15); text-align: center; font-size: 13px; color: rgba(250, 248, 245, 0.8); line-height: 1.6;">
+        💳 <strong>Payment Options:</strong> Cash on Delivery (COD) available nationwide with parcel inspection. Electronic payments (JazzCash, Easypaisa, Bank Transfer) can be configured via official Shopify payment providers.
+      </div>
+
+      <!-- Copyright Bar -->
+      <div style="padding-top: 24px; text-align: center; font-size: 12px; color: rgba(250, 248, 245, 0.6);">
+        &copy; 2026 TIMECRAFT Watches — Raja Bazaar, Rawalpindi. All rights reserved.
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Interactive Cart Toast Widget -->
+  <div class="cart-toast" id="cart-toast">
+    <div class="cart-toast__icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20 6L9 17l-5-5"/></svg>
+    </div>
+    <div class="cart-toast__content">
+      <div class="cart-toast__title" id="toast-title">Added to Cart!</div>
+      <div class="cart-toast__desc" id="toast-price">Rs. 18,500 &bull; Ready for checkout</div>
+    </div>
+    <a href="#cart" class="cart-toast__btn" onclick="document.getElementById('cart-toast').classList.remove('is-active');">View Cart</a>
+  </div>
+
+  <script>
+    // Cart counter and interactive feedback
+    let cartTotalItems = 2;
+
+    function triggerCartToast(name, price) {
+      cartTotalItems++;
+      const badge = document.getElementById('header-cart-count');
+      if (badge) badge.textContent = cartTotalItems;
+
+      const toast = document.getElementById('cart-toast');
+      const title = document.getElementById('toast-title');
+      const desc = document.getElementById('toast-price');
+
+      if (title) title.textContent = name;
+      if (desc) desc.textContent = price + ' • Added to cart';
+
+      if (toast) {
+        toast.classList.add('is-active');
+        setTimeout(function() {
+          toast.classList.remove('is-active');
+        }, 3500);
+      }
+    }
+
+    function showWholesaleSuccess() {
+      const banner = document.getElementById('demo-wholesale-success');
+      if (banner) {
+        banner.style.display = 'block';
+        banner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+  </script>
+
+  <script src="assets/theme.js"></script>
+</body>
+</html>

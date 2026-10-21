@@ -1,0 +1,21 @@
+{
+  "sections": {
+    "wholesale-form": {
+      "type": "wholesale-form",
+      "settings": {
+        "heading": "Wholesale & Bulk Orders",
+        "description": "Looking for bulk orders or wholesale pricing for your retail business in Pakistan? Fill out the form below with your requirements and our team will get back to you with competitive bulk rates.",
+        "submit_text": "Submit Wholesale Enquiry",
+        "success_message": "Thank you for your enquiry! We will contact you within 24-48 hours."
+      }
+    },
+    "wholesale-benefits": {
+      "type": "benefits-row",
+      "settings": {}
+    }
+  },
+  "order": [
+    "wholesale-form",
+    "wholesale-benefits"
+  ]
+}

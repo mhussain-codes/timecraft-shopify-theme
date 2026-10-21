@@ -1,0 +1,314 @@
+{% comment %} Wholesale enquiry form - Shopify contact form use karta hai {% endcomment %}
+
+<section class="wholesale-form" id="section-{{ section.id }}">
+  <div class="wholesale-form__wrapper">
+    <h1 class="wholesale-form__heading">{{ section.settings.heading }}</h1>
+
+    {% if section.settings.description != blank %}
+      <p class="wholesale-form__description">{{ section.settings.description }}</p>
+    {% endif %}
+
+    {%- comment %} Shopify contact form - submissions store email pe jayenge {% endcomment -%}
+    {% form 'contact' %}
+
+      {%- comment %} Success message {% endcomment -%}
+      {% if form.posted_successfully? %}
+        <div class="wholesale-form__success">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <p>{{ section.settings.success_message }}</p>
+        </div>
+      {% endif %}
+
+      {%- comment %} Error messages {% endcomment -%}
+      {% if form.errors %}
+        <div class="wholesale-form__error">
+          <p>{{ form.errors | default_errors }}</p>
+        </div>
+      {% endif %}
+
+      <div class="wholesale-form__grid">
+        {%- comment %} Name field {% endcomment -%}
+        <div class="wholesale-form__field">
+          <label for="wholesale-name-{{ section.id }}" class="wholesale-form__label">Name <span class="wholesale-form__required">*</span></label>
+          <input
+            type="text"
+            id="wholesale-name-{{ section.id }}"
+            name="contact[name]"
+            class="wholesale-form__input"
+            placeholder="Your full name"
+            required
+          >
+        </div>
+
+        {%- comment %} Email field {% endcomment -%}
+        <div class="wholesale-form__field">
+          <label for="wholesale-email-{{ section.id }}" class="wholesale-form__label">Email <span class="wholesale-form__required">*</span></label>
+          <input
+            type="email"
+            id="wholesale-email-{{ section.id }}"
+            name="contact[email]"
+            class="wholesale-form__input"
+            placeholder="your@email.com"
+            required
+          >
+        </div>
+
+        {%- comment %} Phone field {% endcomment -%}
+        <div class="wholesale-form__field">
+          <label for="wholesale-phone-{{ section.id }}" class="wholesale-form__label">Phone <span class="wholesale-form__required">*</span></label>
+          <input
+            type="tel"
+            id="wholesale-phone-{{ section.id }}"
+            name="contact[phone]"
+            class="wholesale-form__input"
+            placeholder="+92 3XX XXXXXXX"
+            required
+          >
+        </div>
+
+        {%- comment %} Company name {% endcomment -%}
+        <div class="wholesale-form__field">
+          <label for="wholesale-company-{{ section.id }}" class="wholesale-form__label">Company Name</label>
+          <input
+            type="text"
+            id="wholesale-company-{{ section.id }}"
+            name="contact[company]"
+            class="wholesale-form__input"
+            placeholder="Your company or store name"
+          >
+        </div>
+
+        {%- comment %} Quantity range dropdown {% endcomment -%}
+        <div class="wholesale-form__field wholesale-form__field--full">
+          <label for="wholesale-quantity-{{ section.id }}" class="wholesale-form__label">Preferred Quantity Range</label>
+          <select
+            id="wholesale-quantity-{{ section.id }}"
+            name="contact[quantity_range]"
+            class="wholesale-form__select"
+          >
+            <option value="">Select quantity range</option>
+            <option value="10-25">10 - 25 pieces</option>
+            <option value="25-50">25 - 50 pieces</option>
+            <option value="50-100">50 - 100 pieces</option>
+            <option value="100-500">100 - 500 pieces</option>
+            <option value="500+">500+ pieces</option>
+          </select>
+        </div>
+
+        {%- comment %} Message / requirements textarea {% endcomment -%}
+        <div class="wholesale-form__field wholesale-form__field--full">
+          <label for="wholesale-message-{{ section.id }}" class="wholesale-form__label">Message / Requirements <span class="wholesale-form__required">*</span></label>
+          <textarea
+            id="wholesale-message-{{ section.id }}"
+            name="contact[body]"
+            class="wholesale-form__textarea"
+            placeholder="Tell us about your requirements, preferred watch types, quantities, etc."
+            rows="5"
+            required
+          ></textarea>
+        </div>
+      </div>
+
+      {%- comment %} Hidden subject field - email subject set karo {% endcomment -%}
+      <input type="hidden" name="contact[subject]" value="Wholesale Enquiry">
+
+      <button type="submit" class="wholesale-form__submit">
+        {{ section.settings.submit_text }}
+      </button>
+    {% endform %}
+  </div>
+</section>
+
+<style>
+  #section-{{ section.id }} {
+    background-color: #FAF8F5;
+    padding: 60px 20px;
+    font-family: 'Inter', sans-serif;
+  }
+
+  #section-{{ section.id }} .wholesale-form__wrapper {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  #section-{{ section.id }} .wholesale-form__heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: #2D4F3E;
+    text-align: center;
+    margin: 0 0 12px;
+  }
+
+  #section-{{ section.id }} .wholesale-form__description {
+    font-size: 15px;
+    color: #666;
+    text-align: center;
+    max-width: 540px;
+    margin: 0 auto 36px;
+    line-height: 1.6;
+  }
+
+  /* Form grid - 2 columns for short fields */
+  #section-{{ section.id }} .wholesale-form__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 28px;
+  }
+
+  #section-{{ section.id }} .wholesale-form__field--full {
+    grid-column: 1 / -1;
+  }
+
+  /* Labels */
+  #section-{{ section.id }} .wholesale-form__label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #2D4F3E;
+    margin-bottom: 6px;
+  }
+
+  #section-{{ section.id }} .wholesale-form__required {
+    color: #c0392b;
+  }
+
+  /* Inputs */
+  #section-{{ section.id }} .wholesale-form__input,
+  #section-{{ section.id }} .wholesale-form__select,
+  #section-{{ section.id }} .wholesale-form__textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #d1cdc7;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: #2D4F3E;
+    background-color: #fff;
+    transition: border-color 0.2s ease;
+    box-sizing: border-box;
+  }
+
+  #section-{{ section.id }} .wholesale-form__input:focus,
+  #section-{{ section.id }} .wholesale-form__select:focus,
+  #section-{{ section.id }} .wholesale-form__textarea:focus {
+    outline: none;
+    border-color: #2D4F3E;
+    box-shadow: 0 0 0 2px rgba(45, 79, 62, 0.1);
+  }
+
+  #section-{{ section.id }} .wholesale-form__textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  #section-{{ section.id }} .wholesale-form__input::placeholder,
+  #section-{{ section.id }} .wholesale-form__textarea::placeholder {
+    color: #aaa;
+  }
+
+  /* Submit button */
+  #section-{{ section.id }} .wholesale-form__submit {
+    display: block;
+    width: 100%;
+    background-color: #2D4F3E;
+    color: #FAF8F5;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  #section-{{ section.id }} .wholesale-form__submit:hover {
+    background-color: #234232;
+  }
+
+  /* Success message */
+  #section-{{ section.id }} .wholesale-form__success {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #d4edda;
+    color: #155724;
+    padding: 14px 18px;
+    border-radius: 4px;
+    margin-bottom: 24px;
+    font-size: 14px;
+  }
+
+  #section-{{ section.id }} .wholesale-form__success p {
+    margin: 0;
+  }
+
+  #section-{{ section.id }} .wholesale-form__success svg {
+    flex-shrink: 0;
+    color: #155724;
+  }
+
+  /* Error message */
+  #section-{{ section.id }} .wholesale-form__error {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 14px 18px;
+    border-radius: 4px;
+    margin-bottom: 24px;
+    font-size: 14px;
+  }
+
+  #section-{{ section.id }} .wholesale-form__error p {
+    margin: 0;
+  }
+
+  /* Mobile - single column */
+  @media screen and (max-width: 749px) {
+    #section-{{ section.id }} .wholesale-form__grid {
+      grid-template-columns: 1fr;
+    }
+
+    #section-{{ section.id }} .wholesale-form__heading {
+      font-size: 26px;
+    }
+
+    #section-{{ section.id }} {
+      padding: 40px 16px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Wholesale Form",
+  "tag": "section",
+  "class": "wholesale-form-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Wholesale Enquiry"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Interested in bulk orders? Fill out the form below and our team will get back to you with pricing and availability."
+    },
+    {
+      "type": "text",
+      "id": "submit_text",
+      "label": "Submit Button Text",
+      "default": "Submit Enquiry"
+    },
+    {
+      "type": "text",
+      "id": "success_message",
+      "label": "Success Message",
+      "default": "Thank you for your enquiry! We will get back to you within 24-48 hours."
+    }
+  ]
+}
+{% endschema %}

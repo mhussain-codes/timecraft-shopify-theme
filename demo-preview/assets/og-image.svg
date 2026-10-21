@@ -1,0 +1,84 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-grad" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#182E23"/>
+      <stop offset="50%" stop-color="#2D4F3E"/>
+      <stop offset="100%" stop-color="#14261D"/>
+    </linearGradient>
+    <radialGradient id="gold-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#C5A46D" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#C5A46D" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg-grad)"/>
+
+  <!-- Subtle Radial Glow behind watch -->
+  <circle cx="280" cy="315" r="240" fill="url(#gold-glow)"/>
+
+  <!-- Architectural Gold Border Frame -->
+  <rect x="36" y="36" width="1128" height="558" rx="12" stroke="#C5A46D" stroke-opacity="0.35" stroke-width="2"/>
+  <rect x="46" y="46" width="1108" height="538" rx="8" stroke="#C5A46D" stroke-opacity="0.2" stroke-width="1"/>
+
+  <!-- Left: Heritage Watch Graphic -->
+  <g transform="translate(140, 175)">
+    <!-- Strap top and bottom -->
+    <rect x="110" y="-80" width="60" height="80" rx="6" fill="#3D2010" stroke="#C5A46D" stroke-width="1.5"/>
+    <rect x="110" y="280" width="60" height="80" rx="6" fill="#3D2010" stroke="#C5A46D" stroke-width="1.5"/>
+    <!-- Watch Case -->
+    <circle cx="140" cy="140" r="130" fill="#152C22" stroke="#C5A46D" stroke-width="8"/>
+    <circle cx="140" cy="140" r="118" fill="#1C382B" stroke="#9A7B45" stroke-width="2"/>
+    <!-- Dial face -->
+    <circle cx="140" cy="140" r="108" fill="#FAF8F5"/>
+    <!-- Hour marks -->
+    <line x1="140" y1="42" x2="140" y2="58" stroke="#2D4F3E" stroke-width="3" stroke-linecap="round"/>
+    <line x1="140" y1="222" x2="140" y2="238" stroke="#2D4F3E" stroke-width="3" stroke-linecap="round"/>
+    <line x1="42" y1="140" x2="58" y2="140" stroke="#2D4F3E" stroke-width="3" stroke-linecap="round"/>
+    <line x1="222" y1="140" x2="238" y2="140" stroke="#2D4F3E" stroke-width="3" stroke-linecap="round"/>
+    <!-- Brand on dial -->
+    <text x="140" y="112" text-anchor="middle" fill="#2D4F3E" font-family="'Playfair Display', Georgia, serif" font-size="14" font-weight="700" letter-spacing="2">TIMECRAFT</text>
+    <text x="140" y="125" text-anchor="middle" fill="#C5A46D" font-family="'Inter', sans-serif" font-size="8" font-weight="600" letter-spacing="1.5">RAWALPINDI</text>
+    <!-- Hands pointing at classic 10:10 -->
+    <line x1="140" y1="140" x2="90" y2="90" stroke="#2D4F3E" stroke-width="4.5" stroke-linecap="round"/>
+    <line x1="140" y1="140" x2="190" y2="78" stroke="#2D4F3E" stroke-width="3.2" stroke-linecap="round"/>
+    <line x1="140" y1="156" x2="140" y2="60" stroke="#C5A46D" stroke-width="1.6" stroke-linecap="round"/>
+    <circle cx="140" cy="140" r="5" fill="#C5A46D"/>
+    <!-- Crown -->
+    <rect x="272" y="130" width="14" height="20" rx="3" fill="#C5A46D"/>
+  </g>
+
+  <!-- Right: Editorial Typography and Badges -->
+  <g transform="translate(520, 140)">
+    <!-- Badge -->
+    <rect x="0" y="0" width="310" height="34" rx="17" fill="#C5A46D" fill-opacity="0.2" stroke="#C5A46D" stroke-opacity="0.4"/>
+    <text x="15" y="22" fill="#E0C99E" font-family="'Inter', sans-serif" font-size="12" font-weight="700" letter-spacing="1.5">SHOPIFY ONLINE STORE 2.0</text>
+    <circle cx="280" cy="17" r="4" fill="#C5A46D"/>
+
+    <!-- Heading -->
+    <text x="0" y="90" fill="#FAF8F5" font-family="'Playfair Display', Georgia, serif" font-size="56" font-weight="700" letter-spacing="2">TIMECRAFT</text>
+    <text x="0" y="132" fill="#C5A46D" font-family="'Inter', sans-serif" font-size="16" font-weight="600" letter-spacing="3">HAUTE HOROLOGIE • RAJA BAZAAR, RAWALPINDI</text>
+
+    <!-- Description -->
+    <text x="0" y="185" fill="#FAF8F5" font-family="'Inter', sans-serif" font-size="18" font-weight="400" fill-opacity="0.85">A minimal, classic Shopify storefront demo built for high-trust retail</text>
+    <text x="0" y="215" fill="#FAF8F5" font-family="'Inter', sans-serif" font-size="18" font-weight="400" fill-opacity="0.85">and wholesale distribution across Pakistan.</text>
+
+    <!-- Feature Pillars -->
+    <g transform="translate(0, 260)">
+      <!-- Pillar 1 -->
+      <rect x="0" y="0" width="180" height="42" rx="6" fill="#182E23" stroke="#C5A46D" stroke-opacity="0.3"/>
+      <text x="18" y="26" fill="#FAF8F5" font-family="'Inter', sans-serif" font-size="13" font-weight="600">⚡ Live Clocks (PKT)</text>
+
+      <!-- Pillar 2 -->
+      <rect x="195" y="0" width="180" height="42" rx="6" fill="#182E23" stroke="#C5A46D" stroke-opacity="0.3"/>
+      <text x="212" y="26" fill="#FAF8F5" font-family="'Inter', sans-serif" font-size="13" font-weight="600">💼 Wholesale B2B</text>
+
+      <!-- Pillar 3 -->
+      <rect x="390" y="0" width="180" height="42" rx="6" fill="#182E23" stroke="#C5A46D" stroke-opacity="0.3"/>
+      <text x="408" y="26" fill="#FAF8F5" font-family="'Inter', sans-serif" font-size="13" font-weight="600">📱 Mobile Responsive</text>
+    </g>
+
+    <!-- Footer URL marker -->
+    <text x="0" y="360" fill="#C5A46D" font-family="'Inter', sans-serif" font-size="14" font-weight="500" letter-spacing="1">timecraft-watches.netlify.app • Demo Storefront</text>
+  </g>
+</svg>

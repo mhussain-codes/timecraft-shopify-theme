@@ -1,0 +1,117 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "heading": "Timeless Elegance, Crafted for You",
+        "subheading": "Premium watches from top brands — now available at Raja Bazaar, Rawalpindi. Craftsmanship you can trust, style you can wear every day.",
+        "button_text": "Shop Collection",
+        "button_link": "shopify:\/\/collections\/all"
+      }
+    },
+    "benefits-row": {
+      "type": "benefits-row",
+      "settings": {},
+      "blocks": {
+        "benefit_1": {
+          "type": "benefit",
+          "settings": {
+            "icon_style": "delivery",
+            "title": "Nationwide Delivery",
+            "description": "Free delivery in Rawalpindi & Islamabad; 2-4 days across Pakistan"
+          }
+        },
+        "benefit_2": {
+          "type": "benefit",
+          "settings": {
+            "icon_style": "authentic",
+            "title": "100% Authentic",
+            "description": "Every watch verified and sourced from genuine makers"
+          }
+        },
+        "benefit_3": {
+          "type": "benefit",
+          "settings": {
+            "icon_style": "warranty",
+            "title": "1 Year Warranty",
+            "description": "Official 1-year movement warranty with dedicated local support"
+          }
+        },
+        "benefit_4": {
+          "type": "benefit",
+          "settings": {
+            "icon_style": "returns",
+            "title": "Cash on Delivery & Returns",
+            "description": "Pay on delivery with 7-day hassle-free returns"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_1",
+        "benefit_2",
+        "benefit_3",
+        "benefit_4"
+      ]
+    },
+    "featured-products": {
+      "type": "featured-products",
+      "settings": {
+        "heading": "Our Bestsellers",
+        "subtitle": "Hand-picked timepieces loved by our customers across Pakistan.",
+        "collection": "",
+        "products_count": 4,
+        "show_view_all": true
+      }
+    },
+    "wholesale-banner": {
+      "type": "wholesale-banner",
+      "settings": {
+        "heading": "Wholesale & Bulk Orders",
+        "description": "Looking to stock premium watches for your retail store? We offer competitive bulk pricing for retailers and corporate buyers across Pakistan.",
+        "button_text": "Request Wholesale Pricing",
+        "button_link": "\/pages\/wholesale"
+      }
+    },
+    "collection-tiles": {
+      "type": "collection-tiles",
+      "settings": {
+        "heading": "Shop by Category"
+      },
+      "blocks": {
+        "tile_1": {
+          "type": "tile",
+          "settings": {
+            "title": "Classic Watches",
+            "link": "shopify:\/\/collections\/all"
+          }
+        },
+        "tile_2": {
+          "type": "tile",
+          "settings": {
+            "title": "Sports Watches",
+            "link": "shopify:\/\/collections\/all"
+          }
+        },
+        "tile_3": {
+          "type": "tile",
+          "settings": {
+            "title": "Luxury Collection",
+            "link": "shopify:\/\/collections\/all"
+          }
+        }
+      },
+      "block_order": [
+        "tile_1",
+        "tile_2",
+        "tile_3"
+      ]
+    }
+  },
+  "order": [
+    "hero",
+    "benefits-row",
+    "featured-products",
+    "collection-tiles",
+    "wholesale-banner"
+  ]
+}

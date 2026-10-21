@@ -1,0 +1,13 @@
+{
+  "sections": {
+    "main-product": {
+      "type": "main-product",
+      "settings": {
+        "add_to_cart_text": "Add to Cart"
+      }
+    }
+  },
+  "order": [
+    "main-product"
+  ]
+}

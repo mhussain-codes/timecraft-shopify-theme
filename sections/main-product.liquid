@@ -1,0 +1,491 @@
+{% comment %} Product page section - gallery, details, variant selector, add to cart {% endcomment %}
+
+<section class="main-product" id="section-{{ section.id }}">
+  <div class="product__wrapper">
+    <div class="product__layout">
+
+      {%- comment %} Left side - image gallery {% endcomment -%}
+      <div class="product__media">
+        <div class="product__main-image" id="product-main-image-{{ section.id }}">
+          {% if product.featured_image %}
+            <div class="watch-photo-container">
+              <img
+                src="{{ product.featured_image | image_url: width: 800 }}"
+                alt="{{ product.featured_image.alt | escape | default: product.title }}"
+                id="main-product-img-{{ section.id }}"
+                width="800"
+                height="800"
+                class="product__image"
+              >
+              {% render 'watch-clock-overlay', product: product %}
+            </div>
+          {% else %}
+            {% render 'watch-placeholder', width: 800, height: 800 %}
+          {% endif %}
+        </div>
+
+        {%- comment %} Thumbnails - chhoti images neeche {% endcomment -%}
+        {% if product.images.size > 1 %}
+          <div class="product__thumbnails">
+            {% for image in product.images %}
+              <button
+                type="button"
+                class="product__thumbnail{% if forloop.first %} product__thumbnail--active{% endif %}"
+                data-image-url="{{ image | image_url: width: 800 }}"
+                data-image-alt="{{ image.alt | escape | default: product.title }}"
+                onclick="changeProductImage(this, '{{ section.id }}')"
+                aria-label="View image {{ forloop.index }}"
+              >
+                <img
+                  src="{{ image | image_url: width: 150 }}"
+                  alt="{{ image.alt | escape | default: product.title }}"
+                  width="80"
+                  height="80"
+                  loading="lazy"
+                >
+              </button>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+
+      {%- comment %} Right side - product info aur add to cart {% endcomment -%}
+      <div class="product__info">
+        <h1 class="product__title">{{ product.title }}</h1>
+
+        <div class="product__price">
+          {% if product.compare_at_price > product.price %}
+            <span class="product__price-compare">{{ product.compare_at_price | money }}</span>
+          {% endif %}
+          <span class="product__price-current{% if product.compare_at_price > product.price %} product__price-current--sale{% endif %}">
+            {{ product.price | money }}
+          </span>
+        </div>
+
+        {%- form 'product', product -%}
+          {{ form.errors | default_errors }}
+
+          {%- comment %} Variant selector - sirf tab dikhao jab variants hain {% endcomment -%}
+          {% unless product.has_only_default_variant %}
+            <div class="product__variants">
+              {% for option in product.options_with_values %}
+                <div class="product__option">
+                  <label class="product__option-label" for="option-{{ section.id }}-{{ forloop.index0 }}">
+                    {{ option.name }}
+                  </label>
+                  <select
+                    name="option-{{ forloop.index0 }}"
+                    id="option-{{ section.id }}-{{ forloop.index0 }}"
+                    class="product__option-select"
+                    onchange="updateVariant('{{ section.id }}')"
+                  >
+                    {% for value in option.values %}
+                      <option value="{{ value | escape }}"{% if option.selected_value == value %} selected{% endif %}>
+                        {{ value }}
+                      </option>
+                    {% endfor %}
+                  </select>
+                </div>
+              {% endfor %}
+            </div>
+          {% endunless %}
+
+          {%- comment %} Hidden variant input - Shopify ko variant ID chahiye {% endcomment -%}
+          <select name="id" id="variant-select-{{ section.id }}" class="product__variant-select-hidden" aria-label="Product variant">
+            {% for variant in product.variants %}
+              <option
+                value="{{ variant.id }}"
+                {% if variant == product.selected_or_first_available_variant %}selected{% endif %}
+                data-available="{{ variant.available }}"
+              >
+                {{ variant.title }} - {{ variant.price | money }}
+              </option>
+            {% endfor %}
+          </select>
+
+          {%- comment %} Quantity selector {% endcomment -%}
+          <div class="product__quantity">
+            <label class="product__quantity-label" for="product-qty-{{ section.id }}">Quantity</label>
+            <div class="product__qty-selector">
+              <button type="button" class="product__qty-btn" onclick="adjustProductQty(-1, '{{ section.id }}')" aria-label="Decrease quantity">−</button>
+              <input
+                type="number"
+                id="product-qty-{{ section.id }}"
+                name="quantity"
+                value="1"
+                min="1"
+                class="product__qty-input"
+              >
+              <button type="button" class="product__qty-btn" onclick="adjustProductQty(1, '{{ section.id }}')" aria-label="Increase quantity">+</button>
+            </div>
+          </div>
+
+          {%- comment %} Add to cart button {% endcomment -%}
+          <button
+            type="submit"
+            name="add"
+            class="product__add-btn"
+            {% unless product.selected_or_first_available_variant.available %}disabled{% endunless %}
+          >
+            {% if product.selected_or_first_available_variant.available %}
+              {{ section.settings.add_to_cart_text }}
+            {% else %}
+              Sold Out
+            {% endif %}
+          </button>
+        {%- endform -%}
+
+        {%- comment %} Product description {% endcomment -%}
+        {% if product.description != blank %}
+          <div class="product__description">
+            <h2 class="product__description-heading">Product Details</h2>
+            <div class="product__description-content rte">
+              {{ product.description }}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Thumbnail click pe main image change karo
+  function changeProductImage(thumbnail, sectionId) {
+    var mainImg = document.getElementById('main-product-img-' + sectionId);
+    if (mainImg) {
+      mainImg.src = thumbnail.dataset.imageUrl;
+      mainImg.alt = thumbnail.dataset.imageAlt;
+    }
+
+    // Active thumbnail highlight karo
+    var allThumbs = thumbnail.parentElement.querySelectorAll('.product__thumbnail');
+    allThumbs.forEach(function(t) { t.classList.remove('product__thumbnail--active'); });
+    thumbnail.classList.add('product__thumbnail--active');
+  }
+
+  // Quantity adjust karo - plus minus buttons ke liye
+  function adjustProductQty(change, sectionId) {
+    var input = document.getElementById('product-qty-' + sectionId);
+    var newVal = parseInt(input.value) + change;
+    if (newVal < 1) newVal = 1;
+    input.value = newVal;
+  }
+
+  // Variant selector change hone pe variant ID update karo
+  function updateVariant(sectionId) {
+    var productData = {{ product.variants | json }};
+    var selects = document.querySelectorAll('#section-' + sectionId + ' .product__option-select');
+    var selectedOptions = [];
+
+    selects.forEach(function(select) {
+      selectedOptions.push(select.value);
+    });
+
+    // Match variant from selected options
+    for (var i = 0; i < productData.length; i++) {
+      var variant = productData[i];
+      var match = true;
+
+      for (var j = 0; j < selectedOptions.length; j++) {
+        if (variant.options[j] !== selectedOptions[j]) {
+          match = false;
+          break;
+        }
+      }
+
+      if (match) {
+        var hiddenSelect = document.getElementById('variant-select-' + sectionId);
+        hiddenSelect.value = variant.id;
+
+        // Add to cart button update karo
+        var addBtn = document.querySelector('#section-' + sectionId + ' .product__add-btn');
+        if (variant.available) {
+          addBtn.disabled = false;
+          addBtn.textContent = '{{ section.settings.add_to_cart_text | default: "Add to Cart" }}';
+        } else {
+          addBtn.disabled = true;
+          addBtn.textContent = 'Sold Out';
+        }
+        break;
+      }
+    }
+  }
+</script>
+
+<style>
+  #section-{{ section.id }} {
+    background-color: #FAF8F5;
+    padding: 60px 20px;
+    font-family: 'Inter', sans-serif;
+  }
+
+  #section-{{ section.id }} .product__wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  #section-{{ section.id }} .product__layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+
+  /* Image gallery */
+  #section-{{ section.id }} .product__main-image {
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #fff;
+  }
+
+  #section-{{ section.id }} .product__image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  #section-{{ section.id }} .product__placeholder-svg {
+    width: 100%;
+    height: auto;
+    fill: #d1cdc7;
+    background-color: #e8e4df;
+    padding: 40px;
+  }
+
+  /* Thumbnails row */
+  #section-{{ section.id }} .product__thumbnails {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+    overflow-x: auto;
+  }
+
+  #section-{{ section.id }} .product__thumbnail {
+    width: 72px;
+    height: 72px;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    background: none;
+    padding: 0;
+    flex-shrink: 0;
+    transition: border-color 0.2s ease;
+  }
+
+  #section-{{ section.id }} .product__thumbnail--active,
+  #section-{{ section.id }} .product__thumbnail:hover {
+    border-color: #2D4F3E;
+  }
+
+  #section-{{ section.id }} .product__thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Product info */
+  #section-{{ section.id }} .product__title {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    color: #2D4F3E;
+    margin: 0 0 16px;
+    line-height: 1.3;
+  }
+
+  #section-{{ section.id }} .product__price {
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  #section-{{ section.id }} .product__price-current {
+    font-size: 24px;
+    font-weight: 600;
+    color: #2D4F3E;
+  }
+
+  #section-{{ section.id }} .product__price-current--sale {
+    color: #c0392b;
+  }
+
+  #section-{{ section.id }} .product__price-compare {
+    font-size: 18px;
+    color: #999;
+    text-decoration: line-through;
+  }
+
+  /* Variant selectors */
+  #section-{{ section.id }} .product__variants {
+    margin-bottom: 20px;
+  }
+
+  #section-{{ section.id }} .product__option {
+    margin-bottom: 16px;
+  }
+
+  #section-{{ section.id }} .product__option-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #2D4F3E;
+    margin-bottom: 6px;
+  }
+
+  #section-{{ section.id }} .product__option-select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #d1cdc7;
+    border-radius: 4px;
+    font-size: 15px;
+    font-family: 'Inter', sans-serif;
+    color: #2D4F3E;
+    background-color: #fff;
+    cursor: pointer;
+  }
+
+  #section-{{ section.id }} .product__variant-select-hidden {
+    display: none;
+  }
+
+  /* Quantity */
+  #section-{{ section.id }} .product__quantity {
+    margin-bottom: 24px;
+  }
+
+  #section-{{ section.id }} .product__quantity-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: #2D4F3E;
+    margin-bottom: 6px;
+  }
+
+  #section-{{ section.id }} .product__qty-selector {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid #d1cdc7;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  #section-{{ section.id }} .product__qty-btn {
+    width: 40px;
+    height: 42px;
+    border: none;
+    background: #FAF8F5;
+    cursor: pointer;
+    font-size: 18px;
+    color: #2D4F3E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+  }
+
+  #section-{{ section.id }} .product__qty-btn:hover {
+    background-color: #e8e4df;
+  }
+
+  #section-{{ section.id }} .product__qty-input {
+    width: 50px;
+    height: 42px;
+    text-align: center;
+    border: none;
+    border-left: 1px solid #d1cdc7;
+    border-right: 1px solid #d1cdc7;
+    font-size: 15px;
+    color: #2D4F3E;
+    background: #fff;
+    -moz-appearance: textfield;
+  }
+
+  #section-{{ section.id }} .product__qty-input::-webkit-inner-spin-button,
+  #section-{{ section.id }} .product__qty-input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+  }
+
+  /* Add to cart button - forest-green */
+  #section-{{ section.id }} .product__add-btn {
+    display: block;
+    width: 100%;
+    background-color: #2D4F3E;
+    color: #FAF8F5;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    margin-bottom: 32px;
+  }
+
+  #section-{{ section.id }} .product__add-btn:hover:not(:disabled) {
+    background-color: #234232;
+  }
+
+  #section-{{ section.id }} .product__add-btn:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+  }
+
+  /* Description */
+  #section-{{ section.id }} .product__description {
+    padding-top: 24px;
+    border-top: 1px solid #e8e4df;
+  }
+
+  #section-{{ section.id }} .product__description-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    color: #2D4F3E;
+    margin: 0 0 12px;
+  }
+
+  #section-{{ section.id }} .product__description-content {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #555;
+  }
+
+  #section-{{ section.id }} .product__description-content p {
+    margin: 0 0 12px;
+  }
+
+  /* Mobile layout */
+  @media screen and (max-width: 749px) {
+    #section-{{ section.id }} .product__layout {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    #section-{{ section.id }} .product__title {
+      font-size: 24px;
+    }
+
+    #section-{{ section.id }} {
+      padding: 32px 16px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Product Page",
+  "tag": "section",
+  "class": "main-product-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "add_to_cart_text",
+      "label": "Add to Cart Button Text",
+      "default": "Add to Cart"
+    }
+  ]
+}
+{% endschema %}

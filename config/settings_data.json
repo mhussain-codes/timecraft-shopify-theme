@@ -1,0 +1,46 @@
+{
+  "current": {
+    "color_background": "#FAF8F5",
+    "color_primary": "#2D4F3E",
+    "color_accent": "#C5A46D",
+    "color_text": "#1A1A1A",
+    "color_text_light": "#6B6B6B",
+    "color_border": "#E0DCD7",
+    "color_button_text": "#FFFFFF",
+    "heading_font_weight": "700",
+    "body_font_size": 16,
+    "social_facebook": "",
+    "social_instagram": "",
+    "social_tiktok": "",
+    "social_whatsapp": "",
+    "social_youtube": "",
+    "store_phone": "+92 300 1234567",
+    "store_phone_secondary": "",
+    "store_address": "Raja Bazaar, Rawalpindi, Pakistan",
+    "store_email": "",
+    "store_hours_weekday": "Mon - Sat: 11:00 AM - 9:00 PM",
+    "store_hours_weekend": "Sunday: 2:00 PM - 9:00 PM",
+    "delivery_charges_local": "Rawalpindi / Islamabad: Rs. 200",
+    "delivery_charges_nationwide": "All over Pakistan: Rs. 300",
+    "delivery_time": "2-4 business days nationwide",
+    "payment_cod_label": "Cash on Delivery (COD) available",
+    "payment_jazzcash_label": "JazzCash accepted - number will be shared after order",
+    "payment_easypaisa_label": "Easypaisa accepted - number will be shared after order",
+    "payment_bank_label": "Bank transfer available on request",
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "settings": {}
+      },
+      "header": {
+        "type": "header",
+        "settings": {}
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {}
+      }
+    },
+    "content_for_index": []
+  }
+}

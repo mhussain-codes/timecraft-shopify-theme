@@ -1,0 +1,252 @@
+{% comment %}
+  TIMECRAFT — Product Card Snippet
+  Reusable, comparative card with badges, specifications, live price, and add-to-cart.
+  Yahan product card ka data render hota hai.
+{% endcomment %}
+
+{%- liquid
+  assign is_sample = false
+  if product == blank
+    assign is_sample = true
+  endif
+
+  if is_sample
+    assign card_title = sample_name | default: 'Classic Heritage Chronograph'
+    assign card_price = sample_price | default: 'Rs. 16,500'
+    assign card_compare = sample_compare_price | default: ''
+    assign card_badge = sample_badge | default: 'Automatic • 40mm'
+    assign card_specs = sample_specs | default: 'Sapphire Crystal • Stainless Steel'
+    assign card_url = '/collections/all'
+    assign card_available = true
+    assign card_idx = sample_index | default: 1
+  else
+    assign card_title = product.title
+    assign card_price = product.price | money
+    if product.compare_at_price > product.price
+      assign card_compare = product.compare_at_price | money
+    else
+      assign card_compare = ''
+    endif
+    assign card_badge = product.metafields.custom.badge | default: product.type | default: 'Verified Authentic'
+    assign card_specs = product.metafields.custom.specs | default: 'Raja Bazaar Inspected • 1-Yr Warranty'
+    assign card_url = product.url
+    assign card_available = product.available
+    assign card_idx = forloop.index | default: 1
+  endif
+-%}
+
+{%- comment -%} Yahan product card staggered animation child ke tor par render hota hai {%- endcomment -%}
+<div class="product-card reveal-stagger-child" data-product-id="{{ product.id | default: card_idx }}">
+  
+  <!-- Top Badges & Showroom Tag -->
+  <div class="product-card__header-bar">
+    <span class="product-card__badge">{{ card_badge }}</span>
+    <span class="product-card__stock-tag">In Stock</span>
+  </div>
+
+  <!-- Image / Vector Artwork Container -->
+  <a href="{{ card_url }}" class="product-card__media-link" aria-label="{{ card_title | escape }}">
+    <div class="product-card__media">
+      {% if is_sample == false and product.featured_image != blank %}
+        <div class="watch-photo-container">
+          <img
+            src="{{ product.featured_image | image_url: width: 600 }}"
+            alt="{{ product.featured_image.alt | escape | default: card_title }}"
+            loading="lazy"
+            width="600"
+            height="600"
+            class="product-card__img"
+          >
+          {% render 'watch-clock-overlay', product: product %}
+        </div>
+      {% else %}
+        <!-- Expressive, Detailed Watch Illustration Based on Index -->
+        <div class="product-card__vector product-card__vector--{{ card_idx }}">
+          {% case card_idx %}
+            {% when 1 %}
+              <!-- Royal Sovereign Automatic: 18K Gold Case, Champagne Sunburst Dial, Leather Strap -->
+              <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="watch-artwork-svg" data-live-clock="svg" data-clock-pivot="100 100">
+                <!-- Leather strap top -->
+                <rect x="76" y="8" width="48" height="42" rx="4" fill="#653D1E" stroke="#462711" stroke-width="1.5"/>
+                <line x1="82" y1="16" x2="82" y2="44" stroke="#87532B" stroke-width="1.2" stroke-dasharray="2 2"/>
+                <line x1="118" y1="16" x2="118" y2="44" stroke="#87532B" stroke-width="1.2" stroke-dasharray="2 2"/>
+                <!-- Leather strap bottom -->
+                <rect x="76" y="150" width="48" height="42" rx="4" fill="#653D1E" stroke="#462711" stroke-width="1.5"/>
+                <line x1="82" y1="156" x2="82" y2="184" stroke="#87532B" stroke-width="1.2" stroke-dasharray="2 2"/>
+                <line x1="118" y1="156" x2="118" y2="184" stroke="#87532B" stroke-width="1.2" stroke-dasharray="2 2"/>
+                <!-- Gold Watch Case -->
+                <circle cx="100" cy="100" r="54" fill="#2D4F3E" stroke="#C5A46D" stroke-width="4.5"/>
+                <circle cx="100" cy="100" r="48" fill="#FBF8F3" stroke="#E2D7C3" stroke-width="1.5"/>
+                <!-- Applied Roman & Gold Baton Markers -->
+                <line x1="100" y1="54" x2="100" y2="62" stroke="#C5A46D" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="100" y1="138" x2="100" y2="146" stroke="#C5A46D" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="54" y1="100" x2="62" y2="100" stroke="#C5A46D" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="138" y1="100" x2="146" y2="100" stroke="#C5A46D" stroke-width="2.5" stroke-linecap="round"/>
+                <!-- Dial Text -->
+                <text x="100" y="82" text-anchor="middle" fill="#2D4F3E" font-family="'Playfair Display', serif" font-size="7" font-weight="700" letter-spacing="1.2">TIMECRAFT</text>
+                <text x="100" y="90" text-anchor="middle" fill="#C5A46D" font-family="'Inter', sans-serif" font-size="4.5" font-weight="600" letter-spacing="0.8">AUTOMATIC</text>
+                <!-- Live Rotating Hands (Asia/Karachi Rawalpindi time) -->
+                <line class="clock-hand clock-hand--hour" x1="100" y1="100" x2="100" y2="70" stroke="#2D4F3E" stroke-width="2.6" stroke-linecap="round" transform="rotate(0 100 100)"/>
+                <line class="clock-hand clock-hand--minute" x1="100" y1="100" x2="100" y2="58" stroke="#2D4F3E" stroke-width="1.8" stroke-linecap="round" transform="rotate(0 100 100)"/>
+                <line class="clock-hand clock-hand--second" x1="100" y1="112" x2="100" y2="54" stroke="#C5A46D" stroke-width="1.1" stroke-linecap="round" transform="rotate(0 100 100)"/>
+                <circle cx="100" cy="100" r="3.2" fill="#C5A46D"/>
+                <circle cx="100" cy="100" r="1.4" fill="#2D4F3E"/>
+                <!-- Fluted crown -->
+                <rect x="153" y="95" width="7" height="10" rx="1.5" fill="#C5A46D" stroke="#9A7B45" stroke-width="0.8"/>
+              </svg>
+
+            {% when 2 %}
+              <!-- Heritage Classic Steel: 316L Stainless Case, Midnight Navy Dial, Steel Bracelet -->
+              <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="watch-artwork-svg" data-live-clock="svg" data-clock-pivot="100 100">
+                <!-- Steel bracelet top -->
+                <rect x="75" y="8" width="50" height="42" rx="3" fill="#D3D9DE" stroke="#8E9DA8" stroke-width="1.5"/>
+                <line x1="91" y1="8" x2="91" y2="50" stroke="#8E9DA8" stroke-width="1.2"/>
+                <line x1="109" y1="8" x2="109" y2="50" stroke="#8E9DA8" stroke-width="1.2"/>
+                <!-- Steel bracelet bottom -->
+                <rect x="75" y="150" width="50" height="42" rx="3" fill="#D3D9DE" stroke="#8E9DA8" stroke-width="1.5"/>
+                <line x1="91" y1="150" x2="91" y2="192" stroke="#8E9DA8" stroke-width="1.2"/>
+                <line x1="109" y1="150" x2="109" y2="192" stroke="#8E9DA8" stroke-width="1.2"/>
+                <!-- Brushed Stainless Case -->
+                <circle cx="100" cy="100" r="54" fill="#1C2D37" stroke="#A9B7C1" stroke-width="4"/>
+                <circle cx="100" cy="100" r="48" fill="#121D24" stroke="#485A66" stroke-width="1.2"/>
+                <!-- Silver hour batons -->
+                {% for i in (1..12) %}
+                  <line x1="100" y1="54" x2="100" y2="60" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" transform="rotate({{ i | times: 30 }} 100 100)"/>
+                {% endfor %}
+                <!-- Date window at 3 -->
+                <rect x="131" y="94" width="12" height="12" rx="1.5" fill="#FFFFFF"/>
+                <text x="137" y="103" text-anchor="middle" fill="#121D24" font-family="'Inter', sans-serif" font-size="7" font-weight="700">18</text>
+                <!-- Brand text -->
+                <text x="100" y="81" text-anchor="middle" fill="#FFFFFF" font-family="'Playfair Display', serif" font-size="7" font-weight="700" letter-spacing="1.2">TIMECRAFT</text>
+                <text x="100" y="89" text-anchor="middle" fill="#A9B7C1" font-family="'Inter', sans-serif" font-size="4.5" font-weight="500" letter-spacing="0.8">SAPPHIRE • 50M</text>
+                <!-- Live Rotating Hands -->
+                <line class="clock-hand clock-hand--hour" x1="100" y1="100" x2="100" y2="70" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" transform="rotate(0 100 100)"/>
+                <line class="clock-hand clock-hand--minute" x1="100" y1="100" x2="100" y2="58" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" transform="rotate(0 100 100)"/>
+                <line class="clock-hand clock-hand--second" x1="100" y1="112" x2="100" y2="54" stroke="#E65100" stroke-width="1.1" stroke-linecap="round" transform="rotate(0 100 100)"/>
+                <circle cx="100" cy="100" r="3" fill="#E65100"/>
+                <circle cx="100" cy="100" r="1.3" fill="#FFFFFF"/>
+                <!-- Crown -->
+                <rect x="153" y="95" width="6" height="10" rx="1.5" fill="#D3D9DE" stroke="#8E9DA8" stroke-width="0.8"/>
+              </svg>
+
+            {% when 3 %}
+              <!-- Vanguard Chronograph: Matte Onyx Dial, Rose Gold Accents, Dual Pushers -->
+              <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="watch-artwork-svg" data-live-clock="svg" data-clock-pivot="100 100">
+                <!-- Textured silicone / leather strap -->
+                <rect x="75" y="8" width="50" height="42" rx="3" fill="#202224" stroke="#37393D" stroke-width="1.5"/>
+                <line x1="75" y1="20" x2="125" y2="20" stroke="#37393D" stroke-width="1"/>
+                <line x1="75" y1="32" x2="125" y2="32" stroke="#37393D" stroke-width="1"/>
+                <rect x="75" y="150" width="50" height="42" rx="3" fill="#202224" stroke="#37393D" stroke-width="1.5"/>
+                <line x1="75" y1="162" x2="125" y2="162" stroke="#37393D" stroke-width="1"/>
+                <line x1="75" y1="174" x2="125" y2="174" stroke="#37393D" stroke-width="1"/>
+                <!-- Gunmetal Case with Rose Bezel -->
+                <circle cx="100" cy="100" r="54" fill="#1C1E20" stroke="#C5A46D" stroke-width="3"/>
+                <circle cx="100" cy="100" r="48" fill="#141517" stroke="#2B2E33" stroke-width="1.2"/>
+                <!-- Chrono Sub-eyes -->
+                <circle cx="100" cy="116" r="10" stroke="#C5A46D" stroke-width="0.8" fill="#1C1E20"/>
+                <circle cx="84" cy="100" r="9" stroke="#C5A46D" stroke-width="0.8" fill="#1C1E20"/>
+                <circle cx="116" cy="100" r="9" stroke="#C5A46D" stroke-width="0.8" fill="#1C1E20"/>
+                <!-- Brand text -->
+                <text x="100" y="79" text-anchor="middle" fill="#FFFFFF" font-family="'Playfair Display', serif" font-size="7" font-weight="700">TIMECRAFT</text>
+                <text x="100" y="86" text-anchor="middle" fill="#C5A46D" font-family="'Inter', sans-serif" font-size="4.2" font-weight="700">CHRONO 100M</text>
+                <!-- Live Rotating Hands -->
+                <line class="clock-hand clock-hand--hour" x1="100" y1="100" x2="100" y2="70" stroke="#C5A46D" stroke-width="2.4" stroke-linecap="round" transform="rotate(0 100 100)"/>
+                <line class="clock-hand clock-hand--minute" x1="100" y1="100" x2="100" y2="58" stroke="#C5A46D" stroke-width="1.8" stroke-linecap="round" transform="rotate(0 100 100)"/>
+                <line class="clock-hand clock-hand--second" x1="100" y1="112" x2="100" y2="54" stroke="#D32F2F" stroke-width="1.1" stroke-linecap="round" transform="rotate(0 100 100)"/>
+                <circle cx="100" cy="100" r="2.8" fill="#D32F2F"/>
+                <circle cx="100" cy="100" r="1.3" fill="#C5A46D"/>
+                <!-- Pushers -->
+                <rect x="151" y="87" width="4" height="6" rx="1" fill="#C5A46D"/>
+                <rect x="152" y="96" width="5" height="8" rx="1" fill="#C5A46D"/>
+                <rect x="151" y="107" width="4" height="6" rx="1" fill="#C5A46D"/>
+              </svg>
+
+            {% when 4 %}
+              <!-- Elegance Leather Rose: Rose Gold Tone, Sunburst Emerald Dial, Italian Havana Leather -->
+              <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="watch-artwork-svg" data-live-clock="svg" data-clock-pivot="100 100">
+                <!-- Havana Brown Leather Strap -->
+                <rect x="77" y="8" width="46" height="42" rx="3" fill="#58311B" stroke="#3D2010" stroke-width="1.5"/>
+                <line x1="83" y1="14" x2="83" y2="44" stroke="#874B26" stroke-width="1.2" stroke-dasharray="2 2"/>
+                <line x1="117" y1="14" x2="117" y2="44" stroke="#874B26" stroke-width="1.2" stroke-dasharray="2 2"/>
+                <rect x="77" y="150" width="46" height="42" rx="3" fill="#58311B" stroke="#3D2010" stroke-width="1.5"/>
+                <line x1="83" y1="156" x2="83" y2="186" stroke="#874B26" stroke-width="1.2" stroke-dasharray="2 2"/>
+                <line x1="117" y1="156" x2="117" y2="186" stroke="#874B26" stroke-width="1.2" stroke-dasharray="2 2"/>
+                <!-- Rose Gold Case & Fluted Bezel -->
+                <circle cx="100" cy="100" r="54" fill="#1C382B" stroke="#C5A46D" stroke-width="4.5"/>
+                <circle cx="100" cy="100" r="48" fill="#163124" stroke="#C5A46D" stroke-width="1.5"/>
+                <!-- Diamond Batons -->
+                {% for i in (1..12) %}
+                  <circle cx="100" cy="58" r="1.8" fill="#FFFFFF" stroke="#C5A46D" stroke-width="0.8" transform="rotate({{ i | times: 30 }} 100 100)"/>
+                {% endfor %}
+                <!-- Dial Text -->
+                <text x="100" y="82" text-anchor="middle" fill="#FFFFFF" font-family="'Playfair Display', serif" font-size="7" font-weight="700">TIMECRAFT</text>
+                <text x="100" y="90" text-anchor="middle" fill="#C5A46D" font-family="'Inter', sans-serif" font-size="4.5" font-weight="600">CALIBRE 8215</text>
+                <!-- Live Rotating Hands -->
+                <line class="clock-hand clock-hand--hour" x1="100" y1="100" x2="100" y2="70" stroke="#C5A46D" stroke-width="2.5" stroke-linecap="round" transform="rotate(0 100 100)"/>
+                <line class="clock-hand clock-hand--minute" x1="100" y1="100" x2="100" y2="58" stroke="#C5A46D" stroke-width="1.8" stroke-linecap="round" transform="rotate(0 100 100)"/>
+                <line class="clock-hand clock-hand--second" x1="100" y1="112" x2="100" y2="54" stroke="#FFFFFF" stroke-width="1.1" stroke-linecap="round" transform="rotate(0 100 100)"/>
+                <circle cx="100" cy="100" r="3" fill="#C5A46D"/>
+                <circle cx="100" cy="100" r="1.4" fill="#1C382B"/>
+                <!-- Crown -->
+                <rect x="153" y="95" width="6" height="10" rx="1.5" fill="#C5A46D" stroke="#9A7B45" stroke-width="0.8"/>
+              </svg>
+            {% else %}
+              <!-- Reusable Live Watch Placeholder for any added analog product without custom artwork -->
+              {% render 'watch-placeholder' %}
+          {% endcase %}
+        </div>
+      {% endif %}
+    </div>
+  </a>
+
+  <!-- Product Card Details Body -->
+  <div class="product-card__body">
+    
+    <!-- Specs Row for Comparison -->
+    <div class="product-card__specs-row">{{ card_specs }}</div>
+
+    <!-- Title -->
+    <h3 class="product-card__title">
+      <a href="{{ card_url }}">{{ card_title }}</a>
+    </h3>
+
+    <!-- Pricing Row with Compare Price -->
+    <div class="product-card__price-row">
+      {% if card_compare != blank %}
+        <span class="product-card__compare-price">{{ card_compare }}</span>
+      {% endif %}
+      <span class="product-card__current-price">{{ card_price }}</span>
+    </div>
+
+    <!-- Add to Cart / Order Action -->
+    <div class="product-card__action-wrap">
+      {% if is_sample %}
+        <button
+          type="button"
+          class="btn-primary product-card__btn"
+          onclick="handleSampleAddToCart(this, '{{ card_title | escape }}', '{{ card_price }}')"
+        >
+          Add to Cart
+        </button>
+      {% else %}
+        <form action="/cart/add" method="post" data-add-to-cart-form class="product-card__form">
+          <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+          <input type="hidden" name="quantity" value="1">
+          <button
+            type="submit"
+            class="btn-primary product-card__btn"
+            {% unless card_available %}disabled{% endunless %}
+          >
+            {% if card_available %}
+              Add to Cart
+            {% else %}
+              Sold Out
+            {% endif %}
+          </button>
+        </form>
+      {% endif %}
+    </div>
+
+  </div>
+
+</div>

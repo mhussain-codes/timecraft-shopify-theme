@@ -1,0 +1,586 @@
+{% comment %}
+  TIMECRAFT — Unified Wholesale & Bulk Distribution Section
+  Combines value proposition, trust proof, and interactive enquiry form into one cohesive section.
+  Yahan wholesale banner aur enquiry form render hota hai.
+{% endcomment %}
+
+{%- comment -%} Yahan wholesale section scroll reveal animation ke sath render hota hai {%- endcomment -%}
+<section class="wholesale-unified-section reveal-on-scroll" id="wholesale" aria-labelledby="wholesale-title-{{ section.id }}">
+  <div class="wholesale-unified-container">
+    
+    <div class="wholesale-unified-card">
+      
+      <!-- Left Column: B2B Value Proposition & Showroom Trust -->
+      <div class="wholesale-content-col">
+        <span class="wholesale-badge">{{ section.settings.badge | default: 'Raja Bazaar Wholesale Hub' }}</span>
+        <h2 class="wholesale-heading" id="wholesale-title-{{ section.id }}">{{ section.settings.heading | default: 'Wholesale & Bulk Orders for Retailers' }}</h2>
+        <p class="wholesale-description">
+          {{ section.settings.description | default: 'Supplying watch retailers, jewellery stores, and corporate gift buyers across Pakistan. Access factory-direct pricing, guaranteed authenticity, and flexible order quantities.' }}
+        </p>
+
+        <!-- Trust & Wholesale Benefits List -->
+        <div class="wholesale-perks">
+          <div class="wholesale-perk">
+            <div class="wholesale-perk__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M20 6L9 17l-5-5"/>
+              </svg>
+            </div>
+            <div class="wholesale-perk__text">
+              <strong>Tiered Margin Discounts:</strong>
+              <span>Save 20% to 38% on volume tiers with transparent distributor rate-sheets.</span>
+            </div>
+          </div>
+
+          <div class="wholesale-perk">
+            <div class="wholesale-perk__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M20 6L9 17l-5-5"/>
+              </svg>
+            </div>
+            <div class="wholesale-perk__text">
+              <strong>Flexible Low MOQ:</strong>
+              <span>Start stocking with low trial minimums (starting from 10 pieces).</span>
+            </div>
+          </div>
+
+          <div class="wholesale-perk">
+            <div class="wholesale-perk__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M20 6L9 17l-5-5"/>
+              </svg>
+            </div>
+            <div class="wholesale-perk__text">
+              <strong>Insured Nationwide Dispatch:</strong>
+              <span>TCS, Leopard & Cargo dispatch with Cash on Delivery or bank clearance.</span>
+            </div>
+          </div>
+
+          <div class="wholesale-perk">
+            <div class="wholesale-perk__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <path d="M20 6L9 17l-5-5"/>
+              </svg>
+            </div>
+            <div class="wholesale-perk__text">
+              <strong>Workshop Warranty & Support:</strong>
+              <span>Direct access to our Rawalpindi technician bench for replacement parts and warranty.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- WhatsApp Direct Inquiry -->
+        <div class="wholesale-direct-contact">
+          <p class="wholesale-direct-label">Need immediate stock confirmation?</p>
+          <a href="https://wa.me/923001234567?text=Assalam-o-Alaikum%20TimeCraft%2C%20I%20am%20interested%20in%20wholesale%20watch%20pricing" target="_blank" rel="noopener" class="wholesale-wa-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            <span>WhatsApp Wholesale Desk (+92 300 1234567)</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column: Interactive Wholesale Form -->
+      <div class="wholesale-form-col">
+        <div class="wholesale-form-card">
+          <div class="wholesale-form-header">
+            <h3 class="wholesale-form-title">Request B2B Catalog & Rates</h3>
+            <p class="wholesale-form-subtitle">Fill in your shop details to receive wholesale price tiers and MOQ details.</p>
+          </div>
+
+          {% form 'contact', id: 'wholesale-enquiry-form', class: 'wholesale-form' %}
+            
+            {% if form.posted_successfully? %}
+              <div class="wholesale-alert wholesale-alert--success" role="alert">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/>
+                  <polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+                <div>
+                  <strong>Shukriya! Request Submitted.</strong>
+                  <p>Our Raja Bazaar sales representative will reach out on WhatsApp or phone within 24 hours.</p>
+                </div>
+              </div>
+            {% endif %}
+
+            {% if form.errors %}
+              <div class="wholesale-alert wholesale-alert--error" role="alert">
+                <p>Please check the required fields:</p>
+                {{ form.errors | default_errors }}
+              </div>
+            {% endif %}
+
+            <div class="wholesale-form-grid">
+              
+              <!-- Full Name -->
+              <div class="form-group">
+                <label for="wholesale-contact-name-{{ section.id }}" class="form-label">
+                  Your Name <span class="required-star">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="wholesale-contact-name-{{ section.id }}"
+                  name="contact[name]"
+                  class="form-control"
+                  placeholder="e.g. Tariq Mehmood"
+                  required
+                >
+              </div>
+
+              <!-- Business / Shop Name -->
+              <div class="form-group">
+                <label for="wholesale-business-{{ section.id }}" class="form-label">
+                  Shop / Business Name <span class="required-star">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="wholesale-business-{{ section.id }}"
+                  name="contact[business_name]"
+                  class="form-control"
+                  placeholder="e.g. Al-Madina Watch Co."
+                  required
+                >
+              </div>
+
+              <!-- Phone / WhatsApp -->
+              <div class="form-group">
+                <label for="wholesale-phone-{{ section.id }}" class="form-label">
+                  WhatsApp / Phone <span class="required-star">*</span>
+                </label>
+                <input
+                  type="tel"
+                  id="wholesale-phone-{{ section.id }}"
+                  name="contact[phone]"
+                  class="form-control"
+                  placeholder="0300-1234567"
+                  required
+                >
+              </div>
+
+              <!-- City -->
+              <div class="form-group">
+                <label for="wholesale-city-{{ section.id }}" class="form-label">
+                  City <span class="required-star">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="wholesale-city-{{ section.id }}"
+                  name="contact[city]"
+                  class="form-control"
+                  placeholder="e.g. Rawalpindi, Lahore, Karachi"
+                  required
+                >
+              </div>
+
+              <!-- Volume Tier -->
+              <div class="form-group form-group--full">
+                <label for="wholesale-tier-{{ section.id }}" class="form-label">
+                  Estimated Order Quantity
+                </label>
+                <select
+                  id="wholesale-tier-{{ section.id }}"
+                  name="contact[estimated_quantity]"
+                  class="form-control form-select"
+                >
+                  <option value="10-25">10 - 25 pieces (Trial Retail Tier)</option>
+                  <option value="25-50">25 - 50 pieces (Semi-Wholesale Tier - 28% discount)</option>
+                  <option value="50-100">50 - 100 pieces (Distributor Tier - 35% discount)</option>
+                  <option value="100+">100+ pieces (Carton / Importer Tier)</option>
+                </select>
+              </div>
+
+              <!-- Message / Requirements -->
+              <div class="form-group form-group--full">
+                <label for="wholesale-notes-{{ section.id }}" class="form-label">
+                  Watch Models / Requirements
+                </label>
+                <textarea
+                  id="wholesale-notes-{{ section.id }}"
+                  name="contact[body]"
+                  rows="3"
+                  class="form-control form-textarea"
+                  placeholder="Mention preferred styles (Automatic, Chronograph, Classic Leather) or budget range per watch..."
+                ></textarea>
+              </div>
+
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="wholesale-submit-btn">
+              <span>Submit Wholesale Request</span>
+              <span class="wholesale-btn-arrow">&rarr;</span>
+            </button>
+
+            <p class="wholesale-form-privacy">
+              🔒 Your contact information is kept confidential and only used for verified wholesale correspondence.
+            </p>
+
+          {% endform %}
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* ---------- Unified Wholesale Section ---------- */
+  .wholesale-unified-section {
+    background-color: #2D4F3E;
+    color: #FAF8F5;
+    padding: 88px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .wholesale-unified-section::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(197, 164, 109, 0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .wholesale-unified-container {
+    max-width: 1320px;
+    margin: 0 auto;
+  }
+
+  .wholesale-unified-card {
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+
+  /* Left Column */
+  .wholesale-content-col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .wholesale-badge {
+    display: inline-block;
+    align-self: flex-start;
+    background: rgba(197, 164, 109, 0.2);
+    color: #C5A46D;
+    border: 1px solid rgba(197, 164, 109, 0.4);
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: 6px 14px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+  }
+
+  .wholesale-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #FFFFFF;
+    margin: 0 0 16px;
+  }
+
+  .wholesale-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(250, 248, 245, 0.85);
+    margin: 0 0 32px;
+  }
+
+  .wholesale-perks {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-bottom: 36px;
+  }
+
+  .wholesale-perk {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .wholesale-perk__icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(197, 164, 109, 0.2);
+    color: #C5A46D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .wholesale-perk__text {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: rgba(250, 248, 245, 0.9);
+  }
+
+  .wholesale-perk__text strong {
+    color: #FFFFFF;
+    display: inline;
+    margin-right: 4px;
+  }
+
+  .wholesale-direct-contact {
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+  }
+
+  .wholesale-direct-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: rgba(250, 248, 245, 0.7);
+    margin: 0 0 10px;
+  }
+
+  .wholesale-wa-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(197, 164, 109, 0.4);
+    color: #C5A46D;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 12px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.25s ease;
+  }
+
+  .wholesale-wa-btn:hover {
+    background: #C5A46D;
+    color: #2D4F3E;
+    border-color: #C5A46D;
+  }
+
+  /* Right Column: Form Card */
+  .wholesale-form-card {
+    background: #FFFFFF;
+    color: #2C2C2C;
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+  }
+
+  .wholesale-form-header {
+    margin-bottom: 24px;
+  }
+
+  .wholesale-form-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #2D4F3E;
+    margin: 0 0 8px;
+  }
+
+  .wholesale-form-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #6B6B6B;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .wholesale-alert {
+    padding: 14px 16px;
+    border-radius: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .wholesale-alert--success {
+    background: #EBF5F0;
+    color: #1E6641;
+    border: 1px solid #B8E2CB;
+  }
+
+  .wholesale-alert--error {
+    background: #FDF2F2;
+    color: #9B1C1C;
+    border: 1px solid #F8B4B4;
+  }
+
+  .wholesale-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-group--full {
+    grid-column: 1 / -1;
+  }
+
+  .form-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #2D4F3E;
+    margin-bottom: 6px;
+  }
+
+  .required-star {
+    color: #D32F2F;
+  }
+
+  .form-control {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid #D8D4CC;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #2C2C2C;
+    background-color: #FAF8F5;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    box-sizing: border-box;
+  }
+
+  .form-control:focus {
+    outline: none;
+    border-color: #2D4F3E;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 0 3px rgba(45, 79, 62, 0.12);
+  }
+
+  .form-select {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%232D4F3E'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    background-size: 16px;
+    appearance: none;
+    padding-right: 40px;
+  }
+
+  .form-textarea {
+    resize: vertical;
+    min-height: 72px;
+  }
+
+  .wholesale-submit-btn {
+    width: 100%;
+    background-color: #2D4F3E;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 4px;
+    padding: 15px 24px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: background-color 0.25s ease, transform 0.2s ease;
+  }
+
+  .wholesale-submit-btn:hover {
+    background-color: #1E3A2B;
+    transform: translateY(-1px);
+  }
+
+  .wholesale-btn-arrow {
+    transition: transform 0.2s ease;
+  }
+
+  .wholesale-submit-btn:hover .wholesale-btn-arrow {
+    transform: translateX(4px);
+  }
+
+  .wholesale-form-privacy {
+    font-family: 'Inter', sans-serif;
+    font-size: 11.5px;
+    color: #8C8C8C;
+    text-align: center;
+    margin: 14px 0 0;
+    line-height: 1.4;
+  }
+
+  /* Responsive: Tablet & Mobile */
+  @media (max-width: 991px) {
+    .wholesale-unified-section { padding: 64px 20px; }
+    .wholesale-unified-card {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+    .wholesale-heading { font-size: 34px; }
+    .wholesale-form-card { padding: 32px 24px; }
+  }
+
+  @media (max-width: 640px) {
+    .wholesale-unified-section { padding: 48px 16px; }
+    .wholesale-heading { font-size: 28px; }
+    .wholesale-form-grid {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    .wholesale-form-card { padding: 24px 18px; }
+    .wholesale-form-title { font-size: 20px; }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Wholesale & Bulk Orders",
+  "tag": "section",
+  "class": "wholesale-section-wrapper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "badge",
+      "label": "Badge Text",
+      "default": "Raja Bazaar Wholesale Hub"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Heading",
+      "default": "Wholesale & Bulk Orders for Retailers"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Supplying watch retailers, jewellery stores, and corporate gift buyers across Pakistan. Access factory-direct pricing, guaranteed authenticity, and flexible order quantities."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Wholesale & Bulk Orders"
+    }
+  ]
+}
+{% endschema %}
