@@ -4,6 +4,26 @@ A premium, classic Shopify Online Store 2.0 theme built for **TIMECRAFT**, a spe
 
 The theme features an editorial design language with a warm off-white background (`#FAF8F5`), rich forest-green (`#2D4F3E`) sections and buttons, and muted gold (`#C5A46D`) horological accents, paired with serif display headings (*Playfair Display*) and clean sans-serif body typography (*Inter*).
 
+[![Live Demo](https://img.shields.io/badge/Live%20Showcase-Demo%20Preview-2D4F3E?style=for-the-badge&logo=github)](https://mhussain-codes.github.io/timecraft-shopify-theme/demo-preview/)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Repository-C5A46D?style=for-the-badge&logo=github)](https://github.com/mhussain-codes/timecraft-shopify-theme)
+
+- **Live Public Showcase:** [https://mhussain-codes.github.io/timecraft-shopify-theme/demo-preview/](https://mhussain-codes.github.io/timecraft-shopify-theme/demo-preview/)
+- **GitHub Repository:** [https://github.com/mhussain-codes/timecraft-shopify-theme](https://github.com/mhussain-codes/timecraft-shopify-theme)
+
+---
+
+## Public Showcase vs. Shopify Theme Architecture
+
+Because static hosting providers (GitHub Pages, Vercel, Netlify) cannot parse Shopify `.liquid` template syntax directly, this repository maintains an authentic separation:
+
+1. **Complete Shopify Online Store 2.0 Theme Source (Root):**
+   - Located in `layout/`, `sections/`, `snippets/`, `templates/`, `config/`, `locales/`, and `assets/`.
+   - Fully compatible with standard Shopify CLI (`shopify theme dev`) and Theme Kit for deployment to live Shopify sandboxes.
+2. **Lightweight Public Showcase (`demo-preview/`):**
+   - Faithful static showcase designed for zero-barrier public viewing (e.g. sharing on LinkedIn and portfolio review).
+   - Showcases real layout proportions, 9 live synchronized analog clocks (header emblem, hero timepiece, bestsellers grid, category tiles), and responsive mobile drawer.
+   - **Important Demo Guardrails:** Real orders, payments, and customer data collection are completely disabled. Checkout buttons present a transparent demo modal explaining live Shopify handoff behavior.
+
 ---
 
 ## Folder Structure
