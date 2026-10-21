@@ -79,6 +79,22 @@
       padding-top: 24px;
     }
   }
+
+  /* Yahan chotay mobile par benefits cards aik column mein stack hotay hain */
+  @media (max-width: 480px) {
+    .benefits-grid {
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+    .benefit-item {
+      padding: 16px 12px;
+      border-top: none !important;
+      border-bottom: 1px solid #DDD8D0;
+    }
+    .benefit-item:last-child {
+      border-bottom: none;
+    }
+  }
 {% endstyle %}
 
 {%- comment -%} Yahan benefits row scroll reveal animation ke sath render hoti hai {%- endcomment -%}

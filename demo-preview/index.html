@@ -144,7 +144,700 @@
       color: var(--color-accent);
       flex-shrink: 0;
     }
-  </style>
+  
+/* ==========================================================================
+   Comprehensive Storefront Responsiveness (Mobile, Tablet, Laptop, Desktop)
+   Yahan sabhi screen sizes ke mukammal fluid aur responsive rules hain
+   ========================================================================== */
+
+/* Universal fluid layout reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  margin: 0;
+  padding: 0;
+  -webkit-text-size-adjust: 100%;
+}
+
+img, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Header section responsive layout */
+.header-section {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #FFFFFF;
+  border-bottom: 1px solid #E8E4DF;
+  width: 100%;
+}
+
+.header-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 clamp(12px, 3vw, 24px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  width: 100%;
+}
+
+.header-hamburger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #2D4F3E;
+  padding: 8px;
+  margin-left: -8px;
+  display: none;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-logo a {
+  display: flex;
+  align-items: center;
+  gap: clamp(6px, 1.5vw, 10px);
+  text-decoration: none;
+  color: #2D4F3E;
+}
+
+.header-logo-text {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(20px, 4.5vw, 26px);
+  font-weight: 700;
+  letter-spacing: clamp(1px, 0.4vw, 2px);
+}
+
+.header-nav {
+  display: flex;
+  gap: clamp(14px, 2vw, 32px);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.header-nav a {
+  text-decoration: none;
+  color: #2D4F3E;
+  font-weight: 600;
+  font-size: clamp(12px, 1.15vw, 13.5px);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+.header-nav a:hover {
+  color: #C5A46D;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 1.5vw, 16px);
+  flex-shrink: 0;
+}
+
+.header-wa-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #2D4F3E;
+  text-decoration: none;
+  padding: 7px 12px;
+  border-radius: 4px;
+  background: rgba(45, 79, 62, 0.06);
+  min-height: 40px;
+  transition: background 0.2s ease;
+}
+
+.header-wa-link:hover {
+  background: rgba(45, 79, 62, 0.12);
+}
+
+.header-cart {
+  position: relative;
+  color: #2D4F3E;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 4px;
+}
+
+/* Yahan tablet aur mobile par desktop navigation hide hoti hai aur hamburger menu show hota hai */
+@media (max-width: 1024px) {
+  .header-hamburger {
+    display: flex !important;
+  }
+  .header-nav,
+  header nav {
+    display: none !important;
+  }
+  .header-inner {
+    height: 64px;
+  }
+}
+
+/* Yahan choti screens par WhatsApp text compact icon ban jata hai */
+@media (max-width: 480px) {
+  .header-inner {
+    height: 60px;
+    padding: 0 10px;
+  }
+  .header-wa-link span {
+    display: none;
+  }
+  .header-wa-link {
+    padding: 8px;
+    border-radius: 50%;
+    min-width: 40px;
+    min-height: 40px;
+    justify-content: center;
+  }
+}
+
+/* Mobile Slide-in Drawer */
+.mobile-nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 2000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.mobile-nav-overlay.active {
+  display: block;
+  opacity: 1;
+}
+
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 320px;
+  max-width: 85vw;
+  height: 100%;
+  background: #FFFFFF;
+  z-index: 2001;
+  transform: translateX(-100%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 4px 0 24px rgba(0,0,0,0.15);
+}
+.mobile-nav.active {
+  transform: translateX(0);
+}
+
+/* Hero Section */
+.hero-section {
+  background-color: #2D4F3E;
+  color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(197, 164, 109, 0.25);
+  width: 100%;
+}
+
+.hero-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(40px, 6vw, 88px) clamp(16px, 3.5vw, 24px);
+  display: flex;
+  align-items: center;
+  gap: clamp(28px, 5vw, 64px);
+  width: 100%;
+}
+
+.hero-text {
+  flex: 1.15;
+  min-width: 0;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(197, 164, 109, 0.35);
+  color: #C5A46D;
+  font-size: clamp(10px, 2.5vw, 11.5px);
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  max-width: 100%;
+}
+
+.hero-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 5.5vw, 54px);
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 clamp(14px, 2vw, 20px);
+  color: #FFFFFF;
+  letter-spacing: -0.5px;
+}
+
+.hero-subheading {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(14.5px, 2vw, 17px);
+  line-height: 1.65;
+  color: rgba(250, 248, 245, 0.85);
+  margin: 0 0 clamp(22px, 3vw, 36px);
+  max-width: 540px;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: clamp(24px, 3.5vw, 38px);
+  flex-wrap: wrap;
+}
+
+.hero-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 13.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 15px clamp(20px, 3vw, 36px);
+  border-radius: 4px;
+  text-decoration: none;
+  min-height: 48px;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.hero-btn--primary {
+  background-color: #C5A46D;
+  color: #2D4F3E;
+}
+.hero-btn--primary:hover {
+  background-color: #D6BA86;
+  transform: translateY(-2px);
+}
+
+.hero-btn--secondary {
+  background: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
+  color: #FAF8F5;
+}
+.hero-btn--secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: #C5A46D;
+  color: #C5A46D;
+}
+
+.hero-media {
+  flex: 0.95;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  width: 100%;
+}
+
+.hero-watch-placeholder {
+  width: clamp(210px, 60vw, 400px);
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+}
+
+.hero-watch-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Yahan mobile par hero section stack hota hai aur watch center mein rehti hai */
+@media (max-width: 991px) {
+  .hero-inner {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 36px;
+    padding: clamp(32px, 5vw, 56px) 16px;
+  }
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .hero-actions {
+    justify-content: center;
+  }
+  .hero-trust-bar {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 12px;
+  }
+  .hero-btn {
+    width: 100%;
+    text-align: center;
+  }
+  .hero-watch-placeholder {
+    width: clamp(190px, 64vw, 280px);
+  }
+}
+
+/* Benefits Row Section */
+.benefits-section {
+  background: #FAF8F5;
+  padding: clamp(32px, 5vw, 48px) clamp(16px, 3.5vw, 24px);
+  border-top: 1px solid #E8E4DF;
+  border-bottom: 1px solid #E8E4DF;
+  width: 100%;
+}
+
+.benefits-grid {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  width: 100%;
+}
+
+.benefit-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 24px 16px;
+  position: relative;
+}
+
+@media (max-width: 991px) {
+  .benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  .benefit-item {
+    padding: 16px 12px;
+  }
+}
+
+/* Yahan mobile par benefits aik column mein stack ho jate hain */
+@media (max-width: 540px) {
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .benefit-item {
+    border-bottom: 1px solid #E8E4DF;
+    padding-bottom: 18px;
+  }
+  .benefit-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+}
+
+/* Featured Bestsellers Grid */
+.featured-section {
+  background: #FAF8F5;
+  padding: clamp(48px, 7vw, 88px) clamp(16px, 3.5vw, 24px);
+  width: 100%;
+}
+
+.featured-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(16px, 2.5vw, 28px);
+  width: 100%;
+}
+
+.product-card {
+  background: #FFFFFF;
+  border: 1px solid #E8E4DF;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-width: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(45, 79, 62, 0.08);
+}
+
+.product-card__badge {
+  background: rgba(45, 79, 62, 0.92);
+  color: #FFFFFF;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  max-width: calc(100% - 75px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product-card__btn {
+  width: 100%;
+  background: #2D4F3E;
+  color: #FFFFFF;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 13px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  min-height: 44px;
+  transition: background 0.2s ease;
+}
+
+.product-card__btn:hover {
+  background: #1E3A2B;
+}
+
+@media (max-width: 1024px) {
+  .featured-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+}
+
+/* Yahan mobile par product cards aik column mein aate hain */
+@media (max-width: 600px) {
+  .featured-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+}
+
+/* Category Tiles ("Shop by Category") */
+.categories-section {
+  padding: clamp(48px, 7vw, 88px) clamp(16px, 3.5vw, 24px);
+  background: #FAF8F5;
+  width: 100%;
+}
+
+.category-tiles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(20px, 3vw, 32px);
+  width: 100%;
+}
+
+.category-tile {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(45, 79, 62, 0.08);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  min-width: 0;
+}
+
+.category-tile:hover {
+  transform: translateY(-6px);
+}
+
+.category-tile a {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: clamp(380px, 55vw, 440px);
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+}
+
+@media (max-width: 991px) {
+  .category-tiles-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+  }
+  .category-tile:nth-child(3) {
+    grid-column: span 2;
+  }
+}
+
+/* Yahan category cards mobile par aik column mein aate hain */
+@media (max-width: 640px) {
+  .category-tiles-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .category-tile:nth-child(3) {
+    grid-column: span 1;
+  }
+  .category-tile a {
+    min-height: 380px;
+  }
+}
+
+/* Wholesale Section */
+.wholesale-unified-section {
+  background-color: #2D4F3E;
+  color: #FAF8F5;
+  padding: clamp(48px, 7vw, 88px) clamp(16px, 3.5vw, 24px);
+  position: relative;
+  width: 100%;
+}
+
+.wholesale-unified-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.wholesale-unified-card {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: clamp(32px, 5vw, 60px);
+  align-items: center;
+  width: 100%;
+}
+
+.wholesale-form-card {
+  background: #FFFFFF;
+  border-radius: 8px;
+  padding: clamp(24px, 4.5vw, 40px) clamp(16px, 4.5vw, 32px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.22);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-row-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  width: 100%;
+}
+
+/* Yahan wholesale section mobile par stack hota hai */
+@media (max-width: 991px) {
+  .wholesale-unified-card {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+/* Yahan wholesale form fields mobile par single column ban jati hain */
+@media (max-width: 540px) {
+  .form-row-2col {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
+
+/* Showroom Strip */
+.showroom-strip {
+  background: #F2EFEB;
+  border-top: 1px solid #E8E4DF;
+  border-bottom: 1px solid #E8E4DF;
+  padding: clamp(20px, 3.5vw, 28px) clamp(16px, 3vw, 24px);
+  font-size: 13.5px;
+  color: #2C2C2C;
+  width: 100%;
+}
+
+.showroom-strip__inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+}
+
+.showroom-strip__col {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+@media (max-width: 768px) {
+  .showroom-strip__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+
+/* Footer Section */
+.site-footer {
+  background-color: #2D4F3E;
+  color: #FAF8F5;
+  padding: clamp(48px, 6vw, 68px) clamp(16px, 3.5vw, 24px) 28px;
+  font-family: 'Inter', sans-serif;
+  width: 100%;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  gap: clamp(24px, 3.5vw, 40px);
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(250, 248, 245, 0.15);
+  width: 100%;
+}
+
+@media (max-width: 991px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+}
+
+/* Yahan footer mobile par aik column mein aata hai */
+@media (max-width: 540px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    text-align: left;
+  }
+}
+
+</style>
 </head>
 <body>
   <!-- Public Demo Banner -->
@@ -165,10 +858,10 @@
 
   <!-- Header Section -->
   <header class="header-section" style="position: sticky; top: 0; z-index: 1000; background: #FFFFFF; border-bottom: 1px solid #E8E4DF;">
-    <div class="header-inner" style="max-width: 1320px; margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 72px;">
+    <div class="header-inner">
       
       <!-- Hamburger Menu for mobile -->
-      <button class="header-hamburger" aria-label="Open menu" onclick="document.getElementById('mobile-nav-drawer').classList.add('active'); document.getElementById('mobile-nav-overlay').classList.add('active');" style="background: none; border: none; cursor: pointer; color: #2D4F3E; display: none;">
+      <button class="header-hamburger" aria-label="Open menu" onclick="document.getElementById('mobile-nav-drawer').classList.add('active'); document.getElementById('mobile-nav-overlay').classList.add('active');">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="width: 26px; height: 26px;">
           <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
@@ -176,8 +869,8 @@
 
       <!-- Logo with watch icon (Rawalpindi live analog clock) -->
       <div class="header-logo">
-        <a href="#" style="display: flex; align-items: center; gap: 10px; text-decoration: none; color: #2D4F3E;">
-          <svg class="header-clock-emblem" data-header-clock data-live-clock="svg" data-clock-pivot="16 16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" style="width: 30px; height: 30px;" aria-label="Rawalpindi Live Clock" role="img">
+        <a href="#" class="header-logo-link">
+          <svg class="header-clock-emblem" data-header-clock data-live-clock="svg" data-clock-pivot="16 16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" aria-label="Rawalpindi Live Clock" role="img">
             <circle cx="16" cy="16" r="14" stroke="#2D4F3E" stroke-width="2"/>
             <circle cx="16" cy="16" r="11.5" stroke="#C5A46D" stroke-width="1.2"/>
             <path d="M30 14.8v2.4h1a0.4 0.4 0 0 0 0.4-0.4v-1.6a0.4 0.4 0 0 0-0.4-0.4h-1z" fill="#2D4F3E"/>
@@ -193,13 +886,13 @@
             <circle cx="16" cy="16" r="1.6" fill="#C5A46D"/>
             <circle cx="16" cy="16" r="0.75" fill="#2D4F3E"/>
           </svg>
-          <span style="font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; letter-spacing: 2px;">TIMECRAFT</span>
+          <span class="header-logo-text">TIMECRAFT</span>
         </a>
       </div>
 
       <!-- Desktop Nav Links -->
       <nav>
-        <ul class="header-nav" style="display: flex; gap: 32px; list-style: none; margin: 0; padding: 0;">
+        <ul class="header-nav">
           <li><a href="#" style="text-decoration: none; color: #2D4F3E; font-weight: 600; font-size: 13.5px; text-transform: uppercase; letter-spacing: 0.8px;">Home</a></li>
           <li><a href="#categories" style="text-decoration: none; color: #2D4F3E; font-weight: 600; font-size: 13.5px; text-transform: uppercase; letter-spacing: 0.8px;">Collections</a></li>
           <li><a href="#featured" style="text-decoration: none; color: #2D4F3E; font-weight: 600; font-size: 13.5px; text-transform: uppercase; letter-spacing: 0.8px;">Bestsellers</a></li>
@@ -210,13 +903,13 @@
       </nav>
 
       <!-- Cart Icon -->
-      <div class="header-actions" style="display: flex; align-items: center; gap: 16px;">
-        <a href="https://wa.me/923001234567?text=Hi%20TimeCraft%2C%20I%20have%20an%20inquiry%20regarding%20watches" target="_blank" rel="noopener" class="header-wa-link" style="display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: #2D4F3E; text-decoration: none; padding: 6px 12px; border-radius: 4px; background: rgba(45, 79, 62, 0.06);">
+      <div class="header-actions">
+        <a href="https://wa.me/923001234567?text=Hi%20TimeCraft%2C%20I%20have%20an%20inquiry%20regarding%20watches" target="_blank" rel="noopener" class="header-wa-link">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
           <span>WhatsApp</span>
         </a>
 
-        <a href="#cart" class="header-cart" aria-label="Cart" style="position: relative; color: #2D4F3E; text-decoration: none; display: flex; align-items: center;">
+        <a href="#cart" class="header-cart" aria-label="Cart">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8" style="width: 25px; height: 25px;">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
             <line x1="3" y1="6" x2="21" y2="6"/>
@@ -256,7 +949,7 @@
 
   <!-- Hero Section -->
   <section class="hero-section" style="background-color: #2D4F3E; color: #FFFFFF; position: relative; overflow: hidden; border-bottom: 1px solid rgba(197, 164, 109, 0.25);">
-    <div class="hero-inner" style="max-width: 1320px; margin: 0 auto; padding: 88px 24px; display: flex; align-items: center; gap: 64px;">
+    <div class="hero-inner">
       
       <!-- Text Content Column -->
       <div class="hero-text" style="flex: 1.15; min-width: 0;">
@@ -369,7 +1062,7 @@
 
   <!-- Benefits Row Section -->
   <section class="benefits-section reveal-on-scroll" style="background: #FAF8F5; padding: 48px 24px; border-top: 1px solid #E8E4DF; border-bottom: 1px solid #E8E4DF;">
-    <div class="benefits-grid reveal-stagger-parent" style="max-width: 1320px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;">
+    <div class="benefits-grid reveal-stagger-parent">
       
       <!-- Benefit 1 -->
       <div class="benefit-item reveal-stagger-child" style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 24px 20px; position: relative;">
@@ -441,7 +1134,7 @@
       </div>
 
       <!-- 4-Column Product Grid -->
-      <div class="featured-grid reveal-stagger-parent" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px;">
+      <div class="featured-grid reveal-stagger-parent">
         
         <!-- Card 1 -->
         <div class="product-card reveal-stagger-child" style="background: #FFFFFF; border: 1px solid #E8E4DF; border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; position: relative;">
@@ -615,7 +1308,7 @@
       </div>
 
       <!-- 3 Spacious Equal-Width Portrait Cards -->
-      <div class="category-tiles-grid reveal-stagger-parent" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px;">
+      <div class="category-tiles-grid reveal-stagger-parent">
         
         <!-- Category Card 1: Classic Watches -->
         <div class="category-tile reveal-stagger-child" style="border-radius: 8px; overflow: hidden; background: #1E3A2B; box-shadow: 0 4px 20px rgba(45, 79, 62, 0.08); transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);">
@@ -742,7 +1435,7 @@
   <section class="wholesale-unified-section reveal-on-scroll" id="wholesale" style="background-color: #2D4F3E; color: #FAF8F5; padding: 88px 24px; position: relative;">
     <div class="wholesale-unified-container" style="max-width: 1320px; margin: 0 auto;">
       
-      <div class="wholesale-unified-card" style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 60px; align-items: center;">
+      <div class="wholesale-unified-card">
         
         <!-- Left Column: Value Proposition -->
         <div class="wholesale-content-col">
@@ -814,7 +1507,7 @@
                 <p style="margin: 4px 0 0;">Our Raja Bazaar sales representative will contact you via WhatsApp / Phone within 24 hours with our catalog and rate sheet.</p>
               </div>
 
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+              <div class="form-row-2col">
                 <div>
                   <label style="display: block; font-size: 12.5px; font-weight: 600; color: #2D4F3E; margin-bottom: 6px;">Your Name <span style="color: #D32F2F;">*</span></label>
                   <input type="text" placeholder="e.g. Tariq Mehmood" required style="width: 100%; padding: 11px 14px; border: 1px solid #D8D4CC; border-radius: 4px; font-size: 14px; box-sizing: border-box; background: #FAF8F5;">
@@ -825,7 +1518,7 @@
                 </div>
               </div>
 
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+              <div class="form-row-2col">
                 <div>
                   <label style="display: block; font-size: 12.5px; font-weight: 600; color: #2D4F3E; margin-bottom: 6px;">WhatsApp / Phone <span style="color: #D32F2F;">*</span></label>
                   <input type="tel" placeholder="0300-1234567" required style="width: 100%; padding: 11px 14px; border: 1px solid #D8D4CC; border-radius: 4px; font-size: 14px; box-sizing: border-box; background: #FAF8F5;">
@@ -896,7 +1589,7 @@
   <footer class="site-footer" id="footer" style="background-color: #2D4F3E; color: #FAF8F5; padding: 68px 24px 28px; font-family: 'Inter', sans-serif;">
     <div style="max-width: 1320px; margin: 0 auto;">
       
-      <div style="display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.2fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid rgba(250, 248, 245, 0.15);">
+      <div class="footer-grid">
         
         <!-- Col 1: Brand & Social -->
         <div>

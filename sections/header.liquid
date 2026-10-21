@@ -206,11 +206,22 @@
   }
 
   /* ---------- Responsive ---------- */
-  @media (max-width: 768px) {
+  /* Yahan tablet aur mobile par header hamburger menu switch hota hai */
+  @media (max-width: 1024px) {
     .header-nav { display: none; }
     .header-hamburger { display: flex; }
-    .header-logo-text { font-size: 20px; }
-    .header-inner { height: 60px; padding: 0 16px; }
+    .header-inner { height: 64px; }
+  }
+  @media (max-width: 480px) {
+    .header-logo-text { font-size: 18px; letter-spacing: 1px; }
+    .header-inner { height: 60px; padding: 0 12px; gap: 6px; }
+    .header-clock-emblem { width: 24px; height: 24px; }
+    .header-wa-link span { display: none; }
+    .header-wa-link { padding: 6px 8px; min-width: 36px; min-height: 36px; justify-content: center; }
+  }
+  @media (max-width: 340px) {
+    .header-logo-text { font-size: 16px; letter-spacing: 0.5px; }
+    .header-inner { padding: 0 8px; }
   }
 {% endstyle %}
 
